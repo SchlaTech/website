@@ -22,7 +22,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-left mb-6">What We Do</h2>
           <p className="text-left max-w-2xl mb-12">
-            We work with small businesses to streamline operations through tailored technology solutions. Whether it’s building custom applications, generating reports, tech reviews, or implementing digital tools, I bridge the gap between traditional business and modern tech, especially for communities that need practical, no-nonsense solutions.
+            {"We work with small businesses to streamline operations through tailored technology solutions. Whether it’s building custom applications, generating reports, tech reviews, or implementing digital tools, I bridge the gap between traditional business and modern tech, especially for communities that need practical, no-nonsense solutions."}
           </p>
           <div className="grid gap-8 md:grid-cols-2">
             {[
@@ -69,17 +69,17 @@ export default function Home() {
             <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm">
               <li className="flex items-center gap-2">
-                <img src="https://cdn-icons-png.flaticon.com/512/9062/9062564.png" alt="location" className="w-5 h-5" />
+                <Image src="/images/location.png" alt="location" className="w-5 h-5" width={5} height={5} />
                 Holmesville, Ohio
               </li>
               <li className="flex items-center gap-2">
-                <img src="https://cdn-icons-png.flaticon.com/512/186/186239.png" alt="phone" className="w-5 h-5" />
+                <Image src="/images/phone.png" alt="phone" className="w-5 h-5" width={5} height={5}/>
                 <a href="tel:+3307631399" className="hover:text-blue-400 transition">
                   (330) 763-1399
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="email" className="w-5 h-5" />
+                <Image src="/images/email.png" alt="email" className="w-5 h-5" width={5} height={5}/>
                 <a href="mailto:matt@schlatech.com" className="hover:text-blue-400 transition">
                   matt@schlatech.com
                 </a>
@@ -90,7 +90,7 @@ export default function Home() {
           {/* Form */}
           <div>
             <p className="mb-4 text-sm">
-              Ready to take your business to the next level? Fill out the form below, and we'll get back to you shortly.
+              {"Ready to take your business to the next level? Fill out the form below, and we'll get back to you shortly."}
             </p>
             <form onSubmit={submitForm} className="flex flex-col space-y-4">
               <input
