@@ -83,6 +83,11 @@ export default function AboutPage() {
             Contact Us
           </a>
         </section>
+        {/* FOOTER */}
+        <footer className="text-center text-sm text-white py-6 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1b1b1b] transition-colors">
+          <p>Insight. Action. Growth. | © SchlaTech</p>
+          <p>Follow us: @schlatech</p>
+        </footer>
       </main>
     </>
   );
