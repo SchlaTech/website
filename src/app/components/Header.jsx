@@ -18,6 +18,26 @@ export default function Header({ title, subtitle, showCTA = true }) {
 
   return (
     <>
+      <meta
+        name="description"
+        content="Custom apps, training, and reporting for small businesses. Let SchlaTech help you modernize."
+      />
+
+      {/* Open Graph */}
+      <meta
+        property="og:title"
+        content="SchlaTech – Custom Software for Small Businesses"
+      />
+      <meta
+        property="og:description"
+        content="Custom apps, training, and reporting for small businesses. Let SchlaTech help you modernize."
+      />
+      <meta
+        property="og:image"
+        content="https://schlatech.com/images/icon.png"
+      />
+      <meta property="og:url" content="https://schlatech.com" />
+      <meta property="og:type" content="website" />
       {/* Sticky Nav */}
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
