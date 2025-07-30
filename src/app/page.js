@@ -92,7 +92,7 @@ export default function Home() {
             <p className="mb-4 text-sm">
               {"Ready to take your business to the next level? Fill out the form below, and we'll get back to you shortly."}
             </p>
-            <form onSubmit={submitForm} className="flex flex-col space-y-4">
+            <form action="https://formsubmit.co/matt@schlatech.com" method="POST" className="flex flex-col space-y-4">
               <input
                 type="text"
                 name="name"
