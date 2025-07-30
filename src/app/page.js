@@ -69,17 +69,17 @@ export default function Home() {
             <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm">
               <li className="flex items-center gap-2">
-                <Image src="/images/location.png" alt="location" className="w-5 h-5" width={5} height={5} />
+                <img src="/images/location.png" alt="location" className="w-5 h-5" width={5} height={5} />
                 Holmesville, Ohio
               </li>
               <li className="flex items-center gap-2">
-                <Image src="/images/phone.png" alt="phone" className="w-5 h-5" width={5} height={5}/>
+                <img src="/images/phone.png" alt="phone" className="w-5 h-5" width={5} height={5}/>
                 <a href="tel:+3307631399" className="hover:text-blue-400 transition">
                   (330) 763-1399
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Image src="/images/email.png" alt="email" className="w-5 h-5" width={5} height={5}/>
+                <img src="/images/email.png" alt="email" className="w-5 h-5" width={5} height={5}/>
                 <a href="mailto:matt@schlatech.com" className="hover:text-blue-400 transition">
                   matt@schlatech.com
                 </a>

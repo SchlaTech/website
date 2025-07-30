@@ -50,7 +50,7 @@ export default function AboutPage() {
         <section className="max-w-5xl mx-auto px-6 py-16">
           <h2 className="text-3xl font-semibold mb-4">Meet the Founder</h2>
           <div className="flex flex-col md:flex-row items-center gap-8">
-            <Image src="/images/matt.jpg" alt="Matt Schlabach" className="rounded-full w-40 h-40 object-cover shadow-lg" />
+            <img src="/images/matt.jpg" alt="Matt Schlabach" className="rounded-full w-40 h-40 object-cover shadow-lg" />
             <p className="text-lg text-gray-700 leading-relaxed">
             Matt Schlabach is a seasoned software engineer and passionate entrepreneur based in Holmes County, Ohio. With a deep 
             commitment to people and a mind for technology, he launched SchlaTech to help others thrive in both business and life.
