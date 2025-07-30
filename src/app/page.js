@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const submitForm = (e) => {
@@ -160,12 +161,12 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <Footer />
       {/* FOOTER */}
-      <footer className="text-center text-sm text-white py-6 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1b1b1b] transition-colors">
+      {/* <footer className="text-center text-sm text-white py-6 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1b1b1b] transition-colors">
         <p>Insight. Action. Growth. | © SchlaTech</p>
         <p>Follow us: @schlatech</p>
-      </footer>
+      </footer> */}
     </>
   );
 }

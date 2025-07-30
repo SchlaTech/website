@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export default function AboutPage() {
   return (
@@ -84,10 +85,7 @@ export default function AboutPage() {
           </a>
         </section>
         {/* FOOTER */}
-        <footer className="text-center text-sm text-white py-6 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1b1b1b] transition-colors">
-          <p>Insight. Action. Growth. | © SchlaTech</p>
-          <p>Follow us: @schlatech</p>
-        </footer>
+        <Footer />
       </main>
     </>
   );
