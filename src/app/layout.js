@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from 'next/link';
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,15 +14,14 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "SchlaTech",
-  description: 'Custom software for small businesses',
+  description: "Custom software for small businesses",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="antialiased bg-white text-gray-900">
-        {children}
-      </body>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <body className="antialiased bg-white text-gray-900">{children}</body>
     </html>
   );
 }
