@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Header from './components/Header';
+
 
 export default function Home() {
   const submitForm = (e) => {
@@ -10,55 +12,11 @@ export default function Home() {
   };
 
   return (
-    <div className="font-sans bg-background text-foreground">
-{/* HEADER */}
-<header className="relative px-6 py-8 bg-[url('/images/comp.jpg')] bg-cover bg-center text-white">
-  <div className="absolute inset-0 bg-gray-900/50 z-0"></div>
-  
-  <nav className="relative max-w-7xl mx-auto flex items-center justify-between z-10 px-4">
-    {/* Logo + Brand Name */}
-    <div className="flex items-center space-x-3">
-      <img src="/images/logo.png" alt="SchlaTech Logo" className="h-10 w-10" />
-      <div className="text-3xl font-bold tracking-wide text-white dark:text-white">
-        SCHLA<span className="text-blue-400">TECH</span>
-      </div>
-    </div>
-
-          <ul className="flex space-x-6 text-white dark:text-white font-medium">
-            <li>
-              <a href="#services" className="hover:text-blue-400 transition">
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#form" className="hover:text-blue-400 transition">
-                Contact
-              </a>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-blue-400 transition">
-                About
-              </Link>
-            </li>
-          </ul>
-        </nav>
-
-        <div className="relative z-10 mt-24 text-center text-white dark:text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Smarter Software for Smarter Business
-          </h1>
-          <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
-            Insight. Action. Growth. | Custom software, automation & dashboards tailored to your business needs.
-          </p>
-          <a
-            href="#services"
-            className="inline-block px-6 py-3 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 transition"
-          >
-            Explore Services
-          </a>
-        </div>
-      </header>
-
+    <>
+      <Header 
+        title="Smarter Software for Smarter Business" 
+        subtitle="Insight. Action. Growth. | Custom software, automation & dashboards tailored to your business needs." 
+      />
       {/* SERVICES SECTION */}  
       <section id="services" className="px-6 py-20 bg-slate-100 transition-colors text-black">
         <div className="max-w-5xl mx-auto">
@@ -171,7 +129,7 @@ export default function Home() {
         <p>Insight. Action. Growth. | © SchlaTech</p>
         <p>Follow us: @schlatech</p>
       </footer>
-    </div>
+    </>
   );
 }
 
