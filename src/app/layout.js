@@ -51,12 +51,12 @@ export default function RootLayout({ children }) {
       />
       <meta
         name="twitter:image"
-        content="https://schlatech.com/images/logo-share.png"
+        content="https://schlatech.com/images/icon.png"
       />
 
       {/* <!-- Apple-specific --> */}
       <meta name="apple-mobile-web-app-title" content="SchlaTech" />
-      <link rel="apple-touch-icon" href="/images/logo-share.png"></link>
+      <link rel="apple-touch-icon" href="/images/icon.png"></link>
       <body className="antialiased bg-white text-gray-900">{children}</body>
     </html>
   );
