@@ -41,6 +41,22 @@ export default function RootLayout({ children }) {
       />
       <meta property="og:url" content="https://schlatech.com" />
       <meta property="og:type" content="website" />
+
+      {/* <!-- Twitter (some iOS apps use it too) --> */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="SchlaTech" />
+      <meta
+        name="twitter:description"
+        content="Custom software solutions for small businesses"
+      />
+      <meta
+        name="twitter:image"
+        content="https://schlatech.com/images/logo-share.png"
+      />
+
+      {/* <!-- Apple-specific --> */}
+      <meta name="apple-mobile-web-app-title" content="SchlaTech" />
+      <link rel="apple-touch-icon" href="/images/logo-share.png"></link>
       <body className="antialiased bg-white text-gray-900">{children}</body>
     </html>
   );
