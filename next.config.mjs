@@ -1,7 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-module.exports = {
+const nextConfig = {
   async redirects() {
     return [
       {
@@ -13,7 +11,7 @@ module.exports = {
           },
         ],
         destination: "https://schlatech.com/:path*",
-        permanent: true,
+        permanent: true, // This gives you a 301
       },
     ];
   },
