@@ -25,6 +25,7 @@ export default function RootLayout({ children }) {
         name="description"
         content="Custom apps, training, and reporting for small businesses. Let SchlaTech help you modernize."
       />
+      <meta name="robots" content="index, follow" />
 
       {/* Open Graph */}
       <meta
