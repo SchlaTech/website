@@ -43,9 +43,9 @@ export default function Header({ title, subtitle, showCTA = true }) {
           <div className="hidden text-white md:flex space-x-6 items-center">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
-            <Link href="/services">Services</Link>
+            <Link href="/#services">Services</Link>
             <Link href="/portfolio">Portfolio</Link>
-            <Link href="/contact">Contact</Link>
+            <Link href="/#contact">Contact</Link>
           </div>
         </div>
         {/* Mobile Nav */}

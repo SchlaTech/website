@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const submitForm = (e) => {
@@ -15,55 +16,75 @@ export default function Home() {
     <>
       <Header
         title="Smarter Software for Smarter Business"
-        subtitle="Insight. Action. Growth. | Custom software, automation & dashboards tailored to your business needs."
+        subtitle="Custom software, automation & dashboards tailored to your business needs."
       />
       {/* SERVICES SECTION */}
-      <section
-        id="services"
-        className="px-6 py-20 bg-slate-100 transition-colors text-black"
+<section
+  id="services"
+  className="px-6 py-20 bg-slate-100 transition-colors text-black"
+>
+  <h2 className="text-3xl font-bold text-center mb-12">What We Offer</h2>
+  <div className="max-w-3xl mx-auto text-center mb-12 space-y-6">
+    <p className="text-lg leading-relaxed">
+      At SchlaTech, we believe technology should make work simpler, faster, and
+      more reliable, not more complicated. That’s why we partner with businesses
+      to design software and systems that remove bottlenecks, eliminate
+      repetitive tasks, and give teams tools they can actually trust.
+    </p>
+    <p className="text-lg leading-relaxed">
+      From custom applications to reporting, training, and long-term support,
+      everything we build is focused on solving real problems, creating
+      measurable efficiencies, and giving your business room to grow.
+    </p>
+  </div>
+
+  <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+    {[
+      {
+        title: "Custom Software Solutions",
+        desc: "Tailor-made systems built around your business needs.",
+        image: "/images/Custom.jpg",
+      },
+      {
+        title: "Process Automation",
+        desc: "Save time and money by automating repetitive tasks.",
+        image: "/images/Auto.jpg",
+      },
+      {
+        title: "Interactive Dashboards",
+        desc: "Turn raw data into insights with user-friendly visualizations.",
+        image: "/images/Dash.jpg",
+      },
+      {
+        title: "Business Tech Audits",
+        desc: "Comprehensive reviews to optimize your current digital tools.",
+        image: "/images/Audit.jpg",
+      },
+    ].map((service, idx) => (
+      <motion.div
+        key={idx}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6, delay: idx * 0.2 }}
+        className="p-6 bg-white rounded-xl shadow hover:shadow-md transition"
       >
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-left mb-6">What We Do</h2>
-          <p className="text-left max-w-2xl mb-12">
-            {
-              "We work with small businesses to streamline operations through tailored technology solutions. Whether it’s building custom applications, generating reports, tech reviews, or implementing digital tools, I bridge the gap between traditional business and modern tech, especially for communities that need practical, no-nonsense solutions."
-            }
-          </p>
-          <div className="grid gap-8 md:grid-cols-2">
-            {[
-              {
-                title: "Custom Software Solutions",
-                desc: "Tailor-made systems built around your business needs.",
-                icon: "",
-              },
-              {
-                title: "Process Automation",
-                desc: "Save time and money by automating repetitive tasks.",
-                icon: "",
-              },
-              {
-                title: "Interactive Dashboards",
-                desc: "Turn raw data into insights with user-friendly visualizations.",
-                icon: "",
-              },
-              {
-                title: "Business Tech Audits",
-                desc: "Comprehensive reviews to optimize your current digital tools.",
-                icon: "",
-              },
-            ].map((service, idx) => (
-              <div
-                key={idx}
-                className="p-6 bg-white rounded-xl shadow hover:shadow-md transition"
-              >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p>{service.desc}</p>
-              </div>
-            ))}
-          </div>
+        <div className="w-full h-40 mb-4 rounded-md overflow-hidden">
+          <Image
+            src={service.image}
+            alt={service.title}
+            width={600}
+            height={160}
+            className="w-full h-full object-cover"
+          />
         </div>
-      </section>
+        <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+        <p>{service.desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
 
       {/* CONTACT FORM */}
       <section
