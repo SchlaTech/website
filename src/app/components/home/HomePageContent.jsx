@@ -176,8 +176,9 @@ export default function HomePageContent() {
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[var(--color-gold)]">
                 Manufacturing software that fits your business
               </p>
-              <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                Software That Removes Manufacturing Bottlenecks
+              <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+                <span className="block sm:inline">We Build Software</span>{" "}
+                <span className="block sm:inline">Manufacturers Actually Want to Use.</span>
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-100 sm:text-xl">
                 SchlaTech helps manufacturers eliminate repetitive work, connect disconnected systems,
@@ -215,6 +216,12 @@ export default function HomePageContent() {
                   {item}
                 </span>
               ))}
+              <Link
+                href="/acumatica-development"
+                className="rounded-full border border-[var(--color-teal)]/20 bg-[color:var(--color-accent)] px-4 py-2 text-sm font-semibold text-[var(--color-teal)] transition hover:bg-[color:var(--color-accent)]/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
+              >
+                Acumatica development
+              </Link>
             </div>
           </div>
         </section>
@@ -264,7 +271,7 @@ export default function HomePageContent() {
                   key={solution.title}
                   title={solution.title}
                   description={solution.description}
-                  linkHref="/portfolio"
+                  linkHref={solution.title === "Acumatica and ERP Solutions" ? "/acumatica-development" : "/portfolio"}
                   icon={solution.icon}
                 />
               ))}

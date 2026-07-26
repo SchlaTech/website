@@ -31,10 +31,11 @@ export default function Footer() {
           <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-300">Navigate</h2>
           <ul className="mt-5 space-y-3 text-base text-slate-200">
             <li><Link href="/" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Home</Link></li>
+            <li><Link href="/#services" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Solutions</Link></li>
+            <li><Link href="/portfolio" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Case Studies</Link></li>
             <li><Link href="/about" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">About</Link></li>
-            <li><Link href="/#services" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Services</Link></li>
-            <li><Link href="/portfolio" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Portfolio</Link></li>
             <li><Link href="/#contact" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Contact</Link></li>
+            <li><Link href="/acumatica-development" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Acumatica Development</Link></li>
           </ul>
         </div>
 
