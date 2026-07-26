@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,52 +12,48 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "SchlaTech",
-  description: "Custom software for small businesses",
+  metadataBase: new URL("https://schlatech.com"),
+  title: {
+    default: "SchlaTech | Manufacturing Software, ERP Solutions and Automation",
+    template: "%s | SchlaTech",
+  },
+  description:
+    "SchlaTech helps manufacturers eliminate manual work through custom software, Acumatica and Global Shop ERP solutions, automation, reporting, and system integrations.",
+  alternates: {
+    canonical: "https://schlatech.com",
+  },
+  openGraph: {
+    title: "SchlaTech | Manufacturing Software, ERP Solutions and Automation",
+    description:
+      "SchlaTech helps manufacturers eliminate manual work through custom software, Acumatica and Global Shop ERP solutions, automation, reporting, and system integrations.",
+    url: "https://schlatech.com",
+    siteName: "SchlaTech",
+    type: "website",
+    images: [{ url: "/images/icon.png", width: 1200, height: 630, alt: "SchlaTech logo" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SchlaTech | Manufacturing Software, ERP Solutions and Automation",
+    description:
+      "SchlaTech helps manufacturers eliminate manual work through custom software, Acumatica and Global Shop ERP solutions, automation, reporting, and system integrations.",
+    images: ["/images/icon.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/images/icon.png",
+    apple: "/images/icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta
-        name="description"
-        content="Custom apps, training, and reporting for small businesses. Let SchlaTech help you modernize."
-      />
-      <meta name="robots" content="index, follow" />
-
-      {/* Open Graph */}
-      <meta
-        property="og:title"
-        content="SchlaTech – Custom Software for Small Businesses"
-      />
-      <meta
-        property="og:description"
-        content="Custom apps, training, and reporting for small businesses. Let SchlaTech help you modernize."
-      />
-      <meta
-        property="og:image"
-        content="https://schlatech.com/images/icon.png"
-      />
-      <meta property="og:url" content="https://schlatech.com" />
-      <meta property="og:type" content="website" />
-
-      {/* <!-- Twitter (some iOS apps use it too) --> */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="SchlaTech" />
-      <meta
-        name="twitter:description"
-        content="Custom software solutions for small businesses"
-      />
-      <meta
-        name="twitter:image"
-        content="https://schlatech.com/images/icon.png"
-      />
-
-      {/* <!-- Apple-specific --> */}
-      <meta name="apple-mobile-web-app-title" content="SchlaTech" />
-      <link rel="apple-touch-icon" href="/images/icon.png"></link>
-      <body className="antialiased bg-white text-gray-900">{children}</body>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="min-h-screen bg-[var(--color-background)] text-[var(--color-foreground)] antialiased">
+        {children}
+      </body>
     </html>
   );
 }
