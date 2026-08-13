@@ -1,8 +1,15 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
+  const [year, setYear] = useState("");
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
 
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-navy)] py-16 text-white">
@@ -50,7 +57,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container-shell mt-10 border-t border-white/10 pt-6 text-sm text-slate-400">
-        <p>© {year} SchlaTech. All rights reserved.</p>
+        <p>© {year ? year : ""} SchlaTech. All rights reserved.</p>
       </div>
     </footer>
   );

@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Enable Cache Components to support route segment configs like `instant`
+  cacheComponents: true,
   async redirects() {
     return [
       {

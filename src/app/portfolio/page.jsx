@@ -3,7 +3,6 @@ import Footer from "../components/Footer";
 
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
-export const instant = false;
 
 export default function PortfolioPage() {
   return (
@@ -16,7 +15,7 @@ export default function PortfolioPage() {
         {/* Project #1 */}
         <div className="rounded-2xl shadow p-6 bg-white mx-auto">
           <h3 className="text-xl font-semibold mb-2">Cutbill Builder</h3>
-          <p class="mb-4 text-gray-700">
+          <p className="mb-4 text-gray-700">
               {"Automating a 6-hour process down to seconds."}
           </p>
           <p className="mb-2 text-gray-600">
@@ -26,7 +25,7 @@ export default function PortfolioPage() {
               on editable settings. It then exports the data in the precise format required by the saw.
               The result: fewer mistakes, faster production, and over 250 hours saved annually.
           </p>
-          <div class="overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
+          <div className="overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
               {/* <img
               src="/images/portfolio/cutbill-builder-mockup.png"
               alt="Cutbill Builder Screenshot"
@@ -38,7 +37,7 @@ export default function PortfolioPage() {
         {/* Project #2 */}
         <div className="rounded-2xl shadow p-6 bg-white mx-auto">
           <h3 className="text-xl font-semibold mb-2">Kiosk Ordering System</h3>
-          <p class="mb-4 text-gray-700">
+          <p className="mb-4 text-gray-700">
             Built for the showroom floor and built to last.
           </p>
           <p className="mb-2 text-gray-600">
@@ -48,11 +47,11 @@ export default function PortfolioPage() {
             outside websites. It features automated update checking to ensure all locations stay current without 
             manual intervention, delivering a seamless, secure experience for customers and sales staff alike.
           </p>
-          <div class="overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
+          <div className="overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
             {/* <img
             src="/images/portfolio/kiosk-mockup.png"
             alt="Kiosk Screenshot"
-            class="w-full h-auto object-cover"
+            className="w-full h-auto object-cover"
             /> */}
           </div>
         </div>
@@ -61,7 +60,7 @@ export default function PortfolioPage() {
         {/* Project 3 */}
         <div className="rounded-2xl shadow p-6 bg-white mx-auto">
           <h3 className="text-xl font-semibold mb-2">Mill Inventory App</h3>
-          <p class="mb-4 text-gray-700">
+          <p className="mb-4 text-gray-700">
             Digitizing log receiving and inventory tracking from the yard to the ERP
           </p>
           <p className="mb-2 text-gray-600">
@@ -70,11 +69,11 @@ export default function PortfolioPage() {
             during log scaling, ensuring fast and accurate data capture in the field. Operators can scan QR 
             codes to instantly access inventory details, reducing errors and making inventory traceability seamless. 
             The result is a more efficient, reliable workflow from the moment logs arrive to when they are processed.</p>
-          <div class="overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
+          <div className="overflow-hidden rounded-xl shadow-lg border border-gray-200 dark:border-gray-800">
             {/* <img
             src="/images/portfolio/mill-mockup.png"
             alt="Kiosk Screenshot"
-            class="w-full h-auto object-cover"
+            className="w-full h-auto object-cover"
             /> */}
           </div>
         </div>
