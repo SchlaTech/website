@@ -7,7 +7,7 @@ export default defineConfig({
   fullyParallel: true,
   use: {
     headless: true,
-    baseURL: 'http://127.0.0.1:3002',
+    baseURL: 'http://127.0.0.1:3000',
     viewport: { width: 1280, height: 720 },
     actionTimeout: 0,
     ignoreHTTPSErrors: true,
@@ -19,8 +19,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npx next dev --hostname 127.0.0.1 --port 3002',
-    port: 3002,
+    command: 'npx next dev --hostname 127.0.0.1 --port 3000',
+    port: 3000,
     reuseExistingServer: true,
     cwd: process.cwd(),
   },

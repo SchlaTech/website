@@ -123,28 +123,64 @@ const reasons = [
 
 const caseStudies = [
   {
+    title: "Acumatica OAuth / Microsoft Entra ID Migration",
+    problem:
+      "An external manufacturing application relied on legacy Windows Authentication, which made future security, remote access, and ongoing support harder to sustain.",
+    solution:
+      "SchlaTech migrated the application to modern OAuth and Microsoft Entra ID authentication while preserving the existing user workflow and updating the app to align with current Microsoft identity patterns.",
+    impact:
+      "The client gained modern authentication, improved security posture, easier deployment, and a more future-ready architecture for Acumatica-connected work.",
+    technologies: ["Acumatica", "OAuth 2.0", "Microsoft Entra ID", ".NET", "REST APIs"],
+  },
+  {
+    title: "Production Scheduling Dashboard",
+    problem:
+      "Production planners were jumping between multiple ERP screens and manually reviewing sales orders, dates, and manufacturing constraints before they could make a scheduling decision.",
+    solution:
+      "SchlaTech created a scheduling dashboard that consolidates the key planning data into one interface, allowing planners to review orders, adjust dates, and identify conflicts faster.",
+    impact:
+      "This reduced scheduling friction, improved planner efficiency, and made production planning more accurate and visible across the operation.",
+    technologies: ["Acumatica", "C#", "SQL Server", "REST API"],
+  },
+  {
+    title: "Product Configuration Copy Utility",
+    problem:
+      "Creating similar configurable products required repeating large amounts of setup work, which slowed new product launches and increased inconsistency risk.",
+    solution:
+      "SchlaTech built a configuration copy utility that duplicates existing product configurations while allowing selective updates so teams could launch new variations without starting from scratch.",
+    impact:
+      "The process became faster, more consistent, and much less labor-intensive for product setup teams.",
+    technologies: ["Acumatica", "Manufacturing Configuration", "C#", "SQL"],
+  },
+  {
+    title: "Shop Floor Printing Automation",
+    problem:
+      "Manufacturing documents such as move tickets, labels, and work-center paperwork still required manual intervention and inconsistent routing between printers and work centers.",
+    solution:
+      "SchlaTech implemented automated printing workflows that route production documents to the right printers based on the process, work center, and business rules.",
+    impact:
+      "This reduced manual print handling, improved production flow, and cut down on routing mistakes on the shop floor.",
+    technologies: ["Acumatica", "Manufacturing", "Label Printing", "Custom Actions"],
+  },
+  {
     title: "Cutbill Builder",
-    challenge: "A weekly cutbill process took several hours of manual work and left room for errors.",
+    problem:
+      "Weekly cutbill generation consumed several hours of manual calculations and exports while leaving room for costly mistakes before the production run started.",
     solution:
-      "SchlaTech built a configurable application that automated the calculation and export workflow.",
-    result: "The process was reduced from hours to seconds and saves more than 250 hours each year.",
+      "SchlaTech designed a desktop application that automates cutbill calculations using configurable business rules and exports the required files directly for the production equipment.",
+    impact:
+      "The task dropped from a multi-hour manual process to seconds, saving more than 250 hours annually and improving consistency across the operation.",
+    technologies: ["WPF", "C#", "SQL", "Manufacturing Automation"],
   },
   {
-    title: "Kiosk Ordering System",
-    challenge:
-      "Showroom locations needed a secure, reliable touchscreen tool that stayed current without manual updates.",
+    title: "Manufacturing Operator Workstation",
+    problem:
+      "Frontline operators needed a secure, easy-to-use interface on the shop floor without exposing Windows settings or requiring ongoing maintenance at each location.",
     solution:
-      "SchlaTech delivered a locked down application with automatic update checks and a simple customer experience.",
-    result: "The system was deployed across more than 50 showroom locations.",
-  },
-  {
-    title: "Mill Inventory App",
-    challenge:
-      "Log receiving and inventory entry were still manual, creating delays and tracking gaps.",
-    solution:
-      "SchlaTech developed an Android app that uses QR scanning and guided entry for field and ERP workflows.",
-    result:
-      "The team now captures inventory data more quickly and keeps the ERP workflow connected from the yard to the office.",
+      "SchlaTech built a locked-down touchscreen workstation with centralized automatic updates and streamlined manufacturing workflows for operators across multiple sites.",
+    impact:
+      "The platform was deployed to 50+ sites, simplified operator experience, and reduced the maintenance burden for distributed operations.",
+    technologies: ["WPF", "Prism", "MVVM", "Windows", "SQL"],
   },
 ];
 
@@ -308,34 +344,58 @@ export default function HomePageContent() {
         <section className="bg-white py-20 sm:py-24">
           <div className="container-shell">
             <SectionHeading
-              eyebrow="Software built around real operations"
-              title="Case studies from manufacturing and field environments"
-              description="These projects show how SchlaTech combines ERP knowledge, software development, and practical automation to solve real business problems."
+              eyebrow="Featured wins"
+              title="Business problems solved in manufacturing, ERP, and operations"
+              description="Each project starts with a real operational challenge and ends with a measurable improvement in security, efficiency, planning, or visibility."
             />
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
-              {caseStudies.map((study) => (
+              {caseStudies.slice(0, 3).map((study) => (
                 <article
                   key={study.title}
                   className="flex h-full flex-col rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[color:var(--color-surface)] p-7 shadow-[var(--shadow-soft)]"
                 >
-                  <h3 className="text-xl font-semibold text-[var(--color-navy)]">{study.title}</h3>
-                  <p className="mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
-                    Challenge
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
+                    Featured case study
                   </p>
-                  <p className="mt-2 text-base leading-7 text-[color:var(--color-muted)]">{study.challenge}</p>
-                  <p className="mt-5 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
-                    Solution
-                  </p>
-                  <p className="mt-2 text-base leading-7 text-[color:var(--color-muted)]">{study.solution}</p>
-                  <p className="mt-5 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
-                    Result
-                  </p>
-                  <p className="mt-2 flex-1 text-base leading-7 text-[color:var(--color-muted)]">{study.result}</p>
+                  <h3 className="mt-4 text-xl font-semibold text-[var(--color-navy)]">{study.title}</h3>
+
+                  <div className="mt-5">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
+                      Problem
+                    </p>
+                    <p className="mt-2 text-base leading-7 text-[color:var(--color-muted)]">{study.problem}</p>
+                  </div>
+
+                  <div className="mt-5">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
+                      Solution
+                    </p>
+                    <p className="mt-2 text-base leading-7 text-[color:var(--color-muted)]">{study.solution}</p>
+                  </div>
+
+                  <div className="mt-5">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
+                      Impact
+                    </p>
+                    <p className="mt-2 flex-1 text-base leading-7 text-[color:var(--color-muted)]">{study.impact}</p>
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {study.technologies.map((technology) => (
+                      <span
+                        key={`${study.title}-${technology}`}
+                        className="rounded-full border border-[var(--color-border)] bg-white px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-navy)]"
+                      >
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
+
                   <Link
                     href="/portfolio"
                     className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-teal)] transition hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
                   >
-                    View project details
+                    Explore the full story
                     <ArrowRight size={16} />
                   </Link>
                 </article>

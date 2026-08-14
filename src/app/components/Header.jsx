@@ -123,7 +123,6 @@ export default function Header({
                     setIsSolutionsOpen(false);
                   }
                 }}
-                onMouseLeave={() => setIsSolutionsOpen(false)}
               >
                 <button
                   type="button"
@@ -139,7 +138,11 @@ export default function Header({
                 </button>
 
                 {isSolutionsOpen ? (
-                  <div className="absolute left-0 top-full mt-3 w-64 rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-white p-3 shadow-[var(--shadow-hover)]">
+                  <div
+                    className="absolute left-0 top-full mt-3 w-64 rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-white p-3 shadow-[var(--shadow-hover)]"
+                    onMouseEnter={() => setIsSolutionsOpen(true)}
+                    onMouseLeave={() => setIsSolutionsOpen(false)}
+                  >
                     <ul className="space-y-1">
                       {solutionsLinks.map((link) => (
                         <li key={link.label}>
