@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -147,12 +148,12 @@ export default function PortfolioPage() {
         <div className="mt-16 text-center">
           <h3 className="text-xl font-semibold mb-2">Do you have a problem that looks like this?</h3>
           <p className="text-gray-600 mb-4">Manufacturing, ERP, automation, and integration challenges are exactly where SchlaTech adds value.</p>
-          <a
-            href="/contact"
+          <Link
+            href="/#contact"
             className="inline-block px-6 py-3 bg-[#0097B2] text-white font-semibold rounded-xl shadow hover:bg-[#007d99] transition"
           >
             Talk to SchlaTech
-          </a>
+          </Link>
         </div>
       </main>
       <Footer />

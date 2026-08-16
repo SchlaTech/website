@@ -31,156 +31,111 @@ const technologyItems = [
 const problems = [
   {
     title: "Repetitive Manual Work",
-    description: "Replace time consuming steps with reliable automation.",
+    description: "Automate time-consuming workflows and give your team time back.",
   },
   {
     title: "Disconnected Systems",
-    description: "Connect your ERP, applications, machines, and data.",
+    description: "Connect applications, data, APIs, and business systems.",
   },
   {
-    title: "Limited ERP Functionality",
-    description: "Extend existing systems without forcing your team into awkward workarounds.",
+    title: "Software That Does Not Fit",
+    description: "Build around your actual workflow instead of forcing the business into generic software.",
   },
   {
-    title: "Poor Production Visibility",
-    description: "Give teams clearer scheduling, inventory, and performance information.",
+    title: "Limited Visibility",
+    description: "Turn operational data into useful dashboards, reporting, and decision-making tools.",
   },
   {
-    title: "Error Prone Data Entry",
-    description: "Improve accuracy with validation, integrations, scanning, and purpose built workflows.",
+    title: "Error-Prone Processes",
+    description: "Improve accuracy with validation, automation, integrations, and purpose-built workflows.",
   },
   {
     title: "Outdated Internal Tools",
-    description: "Modernize applications your business still depends on.",
+    description: "Modernize the software your business still depends on.",
   },
 ];
 
 const solutions = [
   {
-    title: "Acumatica and ERP Solutions",
-    description:
-      "Customizations, integrations, reports, workflows, authentication, manufacturing enhancements, and external applications.",
-    icon: Factory,
-  },
-  {
-    title: "Manufacturing Automation",
-    description:
-      "Production scheduling, shop floor workflows, barcode scanning, label printing, and repetitive task automation.",
-    icon: Workflow,
-  },
-  {
-    title: "Custom Business Applications",
-    description:
-      "Purpose built desktop, web, and mobile software designed around your actual operation.",
+    title: "Custom Software",
+    description: "Purpose-built web, desktop, and mobile applications designed around the way your organization works.",
     icon: MonitorSmartphone,
   },
   {
+    title: "Business Automation",
+    description: "Remove repetitive work, reduce manual entry, and streamline processes across your team.",
+    icon: Workflow,
+  },
+  {
+    title: "ERP and System Integrations",
+    description: "Connect your ERP, internal applications, third-party platforms, APIs, and data.",
+    icon: Boxes,
+  },
+  {
     title: "Reporting and Analytics",
-    description:
-      "Dashboards, KPIs, operational reporting, and clearer access to the data your team needs.",
+    description: "Create dashboards, KPIs, reporting tools, and clearer access to operational information.",
     icon: BarChart3,
   },
   {
-    title: "Global Shop ERP Solutions",
-    description:
-      "Custom reporting, SQL based tools, integrations, data workflows, and supporting applications for Global Shop environments.",
-    icon: Boxes,
+    title: "Manufacturing and ERP Solutions",
+    description: "Specialized software, workflows, automation, integrations, and reporting for manufacturers.",
+    icon: Factory,
+  },
+  {
+    title: "Acumatica Development",
+    description: "Customizations, integrations, manufacturing enhancements, authentication, reporting, and external applications.",
+    icon: Factory,
   },
 ];
 
 const reasons = [
   {
-    title: "Manufacturing Experience",
-    description:
-      "Solutions shaped by real production, inventory, scheduling, and shop floor challenges.",
-  },
-  {
     title: "Built Around Your Workflow",
-    description:
-      "Software should fit the business, not force the business into a generic process.",
+    description: "Software should fit the business, not the other way around.",
   },
   {
     title: "Direct Technical Partnership",
-    description:
-      "Work directly with the person understanding and building your solution.",
+    description: "Work directly with the person analyzing and building the solution.",
   },
   {
-    title: "ERP and Custom Software Expertise",
-    description:
-      "Bridge the gaps between your ERP, internal tools, equipment, and business processes.",
+    title: "Practical Problem Solving",
+    description: "Start with the business problem before choosing the technology.",
   },
   {
-    title: "Practical Technology",
-    description:
-      "Choose tools based on reliability and business value, not trends.",
+    title: "Custom Software and ERP Expertise",
+    description: "Bridge the gaps between your existing systems and the software you actually need.",
   },
   {
-    title: "Long Term Support",
-    description:
-      "Build maintainable solutions that can grow as the business changes.",
+    title: "Manufacturing Experience",
+    description: "Benefit from hands-on experience with complex operational and ERP environments.",
+  },
+  {
+    title: "Long-Term Thinking",
+    description: "Build maintainable software that can evolve with the organization.",
   },
 ];
 
 const caseStudies = [
   {
-    title: "Acumatica OAuth / Microsoft Entra ID Migration",
-    problem:
-      "An external manufacturing application relied on legacy Windows Authentication, which made future security, remote access, and ongoing support harder to sustain.",
-    solution:
-      "SchlaTech migrated the application to modern OAuth and Microsoft Entra ID authentication while preserving the existing user workflow and updating the app to align with current Microsoft identity patterns.",
-    impact:
-      "The client gained modern authentication, improved security posture, easier deployment, and a more future-ready architecture for Acumatica-connected work.",
-    technologies: ["Acumatica", "OAuth 2.0", "Microsoft Entra ID", ".NET", "REST APIs"],
-  },
-  {
-    title: "Production Scheduling Dashboard",
-    problem:
-      "Production planners were jumping between multiple ERP screens and manually reviewing sales orders, dates, and manufacturing constraints before they could make a scheduling decision.",
-    solution:
-      "SchlaTech created a scheduling dashboard that consolidates the key planning data into one interface, allowing planners to review orders, adjust dates, and identify conflicts faster.",
-    impact:
-      "This reduced scheduling friction, improved planner efficiency, and made production planning more accurate and visible across the operation.",
-    technologies: ["Acumatica", "C#", "SQL Server", "REST API"],
-  },
-  {
-    title: "Product Configuration Copy Utility",
-    problem:
-      "Creating similar configurable products required repeating large amounts of setup work, which slowed new product launches and increased inconsistency risk.",
-    solution:
-      "SchlaTech built a configuration copy utility that duplicates existing product configurations while allowing selective updates so teams could launch new variations without starting from scratch.",
-    impact:
-      "The process became faster, more consistent, and much less labor-intensive for product setup teams.",
-    technologies: ["Acumatica", "Manufacturing Configuration", "C#", "SQL"],
-  },
-  {
-    title: "Shop Floor Printing Automation",
-    problem:
-      "Manufacturing documents such as move tickets, labels, and work-center paperwork still required manual intervention and inconsistent routing between printers and work centers.",
-    solution:
-      "SchlaTech implemented automated printing workflows that route production documents to the right printers based on the process, work center, and business rules.",
-    impact:
-      "This reduced manual print handling, improved production flow, and cut down on routing mistakes on the shop floor.",
-    technologies: ["Acumatica", "Manufacturing", "Label Printing", "Custom Actions"],
-  },
-  {
     title: "Cutbill Builder",
-    problem:
-      "Weekly cutbill generation consumed several hours of manual calculations and exports while leaving room for costly mistakes before the production run started.",
-    solution:
-      "SchlaTech designed a desktop application that automates cutbill calculations using configurable business rules and exports the required files directly for the production equipment.",
-    impact:
-      "The task dropped from a multi-hour manual process to seconds, saving more than 250 hours annually and improving consistency across the operation.",
-    technologies: ["WPF", "C#", "SQL", "Manufacturing Automation"],
+    problem: "A manual multi-hour process reduced to seconds.",
+    solution: "SchlaTech created a desktop tool that automates cutbill calculations, validates inputs, and exports the required production files.",
+    impact: "The team eliminated repetitive manual work and cut a process that used to take hours into a quick, consistent workflow.",
+    technologies: ["WPF", "C#", "SQL", "Manufacturing"],
   },
   {
-    title: "Manufacturing Operator Workstation",
-    problem:
-      "Frontline operators needed a secure, easy-to-use interface on the shop floor without exposing Windows settings or requiring ongoing maintenance at each location.",
-    solution:
-      "SchlaTech built a locked-down touchscreen workstation with centralized automatic updates and streamlined manufacturing workflows for operators across multiple sites.",
-    impact:
-      "The platform was deployed to 50+ sites, simplified operator experience, and reduced the maintenance burden for distributed operations.",
-    technologies: ["WPF", "Prism", "MVVM", "Windows", "SQL"],
+    title: "Kiosk Ordering System",
+    problem: "A secure touchscreen experience needed to be reliable across more than 50 locations.",
+    solution: "SchlaTech built a locked-down ordering application with centralized updates, a simple operator workflow, and secure deployment requirements.",
+    impact: "The system was deployed across more than 50 locations with a better user experience and lower operational burden.",
+    technologies: ["WPF", "Windows", "Security", "Touchscreen"],
+  },
+  {
+    title: "Mill Inventory App",
+    problem: "Inventory counting and data entry were taking place in the field without a direct connection to the ERP.",
+    solution: "SchlaTech built a mobile QR-based inventory workflow connected directly to ERP data so users could record counts and sync updates in real time.",
+    impact: "The operation gained faster inventory updates, better traceability, and less manual re-entry between field work and back-office systems.",
+    technologies: ["Mobile", "QR", "ERP", "Integration"],
   },
 ];
 
@@ -210,15 +165,13 @@ export default function HomePageContent() {
               className="max-w-4xl"
             >
               <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[var(--color-gold)]">
-                Manufacturing software that fits your business
+                CUSTOM SOFTWARE BUILT AROUND YOUR BUSINESS
               </p>
               <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
-                <span className="block sm:inline">We Build Software</span>{" "}
-                <span className="block sm:inline">Manufacturers Actually Want to Use.</span>
+                We Build Software People Actually Want to Use.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-100 sm:text-xl">
-                SchlaTech helps manufacturers eliminate repetitive work, connect disconnected systems,
-                and improve visibility through custom software, ERP solutions, and practical automation.
+                SchlaTech builds custom software, automation, integrations, and business systems that eliminate repetitive work, connect disconnected tools, and solve problems off-the-shelf software cannot.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
@@ -235,7 +188,7 @@ export default function HomePageContent() {
                 </Link>
               </div>
               <p className="mt-8 text-sm font-medium uppercase tracking-[0.24em] text-slate-200">
-                Custom software • ERP solutions • Automation • Reporting
+                Custom Software • Automation • ERP • Integrations • Reporting
               </p>
             </motion.div>
           </div>
@@ -244,6 +197,11 @@ export default function HomePageContent() {
         <section className="border-b border-[var(--color-border)] bg-white">
           <div className="container-shell py-8">
             <div className="flex flex-wrap items-center justify-center gap-3 md:justify-start">
+              <span className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--color-muted)]">
+                Technology and Platform Experience
+              </span>
+            </div>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-3 md:justify-start">
               {technologyItems.map((item) => (
                 <span
                   key={item}
@@ -265,9 +223,9 @@ export default function HomePageContent() {
         <section id="services" className="scroll-mt-24 bg-[color:var(--color-surface)] py-20 sm:py-24">
           <div className="container-shell">
             <SectionHeading
-              eyebrow="Built for the problems manufacturers face every day"
+              eyebrow="Built for the Problems Businesses Deal With Every Day"
               title="Practical software for the work that slows your team down"
-              description="When spreadsheets, manual entry, disconnected applications, and limited ERP functionality slow your team down, SchlaTech builds practical solutions around the way your business actually works."
+              description="SchlaTech focuses on the business problem first, then builds the right technology around it so teams can work faster, cleaner, and with fewer manual bottlenecks."
             />
             <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {problems.map((problem, index) => (
@@ -297,9 +255,9 @@ export default function HomePageContent() {
         <section className="bg-white py-20 sm:py-24">
           <div className="container-shell">
             <SectionHeading
-              eyebrow="Manufacturing software solutions"
-              title="Solutions built around your operation"
-              description="From ERP extensions to shop floor automation, each engagement is designed to remove friction and improve the way your business runs."
+              eyebrow="Solutions"
+              title="The systems and tools businesses need to operate better"
+              description="SchlaTech works across custom applications, automation, ERP work, data visibility, and connected systems that make daily work easier to run."
             />
             <div className="mt-12 grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
               {solutions.map((solution) => (
@@ -307,10 +265,48 @@ export default function HomePageContent() {
                   key={solution.title}
                   title={solution.title}
                   description={solution.description}
-                  linkHref={solution.title === "Acumatica and ERP Solutions" ? "/acumatica-development" : "/portfolio"}
+                  linkHref={solution.title === "Acumatica Development" ? "/acumatica-development" : solution.title === "Manufacturing and ERP Solutions" ? "/#manufacturing" : "/#services"}
                   icon={solution.icon}
                 />
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="manufacturing" className="border-y border-[var(--color-border)] bg-[color:var(--color-surface)] py-20 sm:py-24">
+          <div className="container-shell">
+            <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-teal)]">
+                  Manufacturing and ERP expertise
+                </p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--color-navy)] sm:text-4xl">
+                  Deep Experience in Manufacturing and ERP
+                </h2>
+                <p className="mt-5 text-lg leading-8 text-[color:var(--color-muted)]">
+                  Manufacturing is one of SchlaTech’s strongest areas of expertise. We have built software around production scheduling, inventory, shop-floor workflows, ERP customization, reporting, authentication, barcoding, printing, and system integration.
+                </p>
+                <p className="mt-4 text-base leading-7 text-[color:var(--color-muted)]">
+                  That experience gives us a practical understanding of complex operations, but the same problem-first approach applies to software projects across other industries as well.
+                </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <Link href="/#services" className="inline-flex items-center justify-center rounded-full bg-[var(--color-teal)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[color:var(--color-teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">
+                    Explore Manufacturing Solutions
+                  </Link>
+                  <Link href="/acumatica-development" className="inline-flex items-center justify-center rounded-full border border-[var(--color-border)] bg-white px-6 py-3 text-sm font-semibold text-[var(--color-navy)] transition hover:border-[var(--color-teal)] hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2">
+                    Acumatica Development
+                  </Link>
+                </div>
+              </div>
+              <div className="rounded-[2rem] border border-[var(--color-border)] bg-white p-6 shadow-[var(--shadow-soft)]">
+                <ul className="space-y-4 text-base text-[color:var(--color-muted)]">
+                  <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-[var(--color-teal)]" /><span>Production scheduling and planning tools</span></li>
+                  <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-[var(--color-teal)]" /><span>Inventory workflows and mobile data capture</span></li>
+                  <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-[var(--color-teal)]" /><span>Acumatica customizations and integrations</span></li>
+                  <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-[var(--color-teal)]" /><span>Barcode, QR, printing, and shop-floor automation</span></li>
+                  <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-[var(--color-teal)]" /><span>Operational reporting and dashboard visibility</span></li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -320,8 +316,8 @@ export default function HomePageContent() {
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <SectionHeading
                 eyebrow="Real software. Measurable results."
-                title="Results that matter to day to day operations"
-                description="These examples reflect the kind of work SchlaTech has delivered for manufacturers that need reliable tools and measurable payoff."
+                title="Results that matter to the business"
+                description="The goal is always practical improvement: fewer manual steps, better data, clearer workflows, and systems that people actually want to use."
                 align="left"
               />
               <Link
@@ -333,10 +329,10 @@ export default function HomePageContent() {
               </Link>
             </div>
             <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              <MetricBlock value="250+" description="Hours saved annually by automating a weekly cutbill process" />
-              <MetricBlock value="50+" description="Touchscreen systems deployed across showroom locations" />
-              <MetricBlock value="6 Hours to Seconds" description="A manual production task transformed into a one click workflow" />
-              <MetricBlock value="One Connected Workflow" description="Inventory data captured in the field and sent directly to the ERP" />
+              <MetricBlock value="250+" description="Hours saved annually by automating a weekly process" />
+              <MetricBlock value="50+" description="Workstation locations deployed across distributed operations" />
+              <MetricBlock value="6-hour process reduced to seconds" description="A multi-step manual operation transformed into a one-click workflow" />
+              <MetricBlock value="Connected field-to-ERP workflow" description="Inventory and operational data captured in the field and synced back to the system" />
             </div>
           </div>
         </section>
@@ -344,27 +340,20 @@ export default function HomePageContent() {
         <section className="bg-white py-20 sm:py-24">
           <div className="container-shell">
             <SectionHeading
-              eyebrow="Featured wins"
-              title="Business problems solved in manufacturing, ERP, and operations"
-              description="Each project starts with a real operational challenge and ends with a measurable improvement in security, efficiency, planning, or visibility."
+              eyebrow="Featured case studies"
+              title="Software that solves real process problems"
+              description="Each engagement starts with a business bottleneck and ends with a more usable solution, better visibility, or reduced manual effort."
             />
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
-              {caseStudies.slice(0, 3).map((study) => (
+              {caseStudies.map((study) => (
                 <article
                   key={study.title}
                   className="flex h-full flex-col rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[color:var(--color-surface)] p-7 shadow-[var(--shadow-soft)]"
                 >
                   <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
-                    Featured case study
+                    Challenge
                   </p>
                   <h3 className="mt-4 text-xl font-semibold text-[var(--color-navy)]">{study.title}</h3>
-
-                  <div className="mt-5">
-                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
-                      Problem
-                    </p>
-                    <p className="mt-2 text-base leading-7 text-[color:var(--color-muted)]">{study.problem}</p>
-                  </div>
 
                   <div className="mt-5">
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
@@ -375,7 +364,7 @@ export default function HomePageContent() {
 
                   <div className="mt-5">
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">
-                      Impact
+                      Result
                     </p>
                     <p className="mt-2 flex-1 text-base leading-7 text-[color:var(--color-muted)]">{study.impact}</p>
                   </div>
@@ -407,9 +396,9 @@ export default function HomePageContent() {
         <section className="bg-[color:var(--color-surface)] py-20 sm:py-24">
           <div className="container-shell">
             <SectionHeading
-              eyebrow="Why manufacturers work with SchlaTech"
-              title="A practical partner for business systems and process improvement"
-              description="We focus on tools that fit the business, support your team, and stand up to real day to day use."
+              eyebrow="Why Businesses Work With SchlaTech"
+              title="A practical partner for custom software and operational improvement"
+              description="We focus on tools that fit the business, support your team, and stand up to real day-to-day use."
             />
             <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {reasons.map((reason) => (
@@ -430,19 +419,22 @@ export default function HomePageContent() {
                   Founder perspective
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[var(--color-navy)] sm:text-4xl">
-                  Manufacturing knowledge meets software expertise
+                  Business Problems Meet Software Engineering
                 </h2>
                 <p className="mt-5 text-lg leading-8 text-[color:var(--color-muted)]">
-                  SchlaTech was founded by Matt Schlabach, a software engineer with hands on experience building ERP customizations, manufacturing applications, automation tools, reporting systems, and shop floor software. SchlaTech combines technical depth with a practical understanding of how manufacturers actually operate.
+                  SchlaTech was founded by Matt Schlabach, a software engineer with experience building custom business applications, ERP customizations, integrations, automation tools, reporting systems, mobile applications, and manufacturing software.
+                </p>
+                <p className="mt-5 text-lg leading-8 text-[color:var(--color-muted)]">
+                  Much of that experience comes from solving complex manufacturing and ERP problems, but SchlaTech’s approach is broader: understand the workflow, identify the bottleneck, and build the right solution.
                 </p>
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                   {[
+                    "Custom software",
+                    "Business automation",
                     "Acumatica development",
-                    "Global Shop ERP",
-                    "Manufacturing automation",
-                    "Custom .NET applications",
-                    "SQL and reporting",
                     "ERP integrations",
+                    "Manufacturing systems",
+                    "SQL and reporting",
                   ].map((specialty) => (
                     <li key={specialty} className="rounded-full border border-[var(--color-border)] bg-white px-4 py-2 text-sm text-[var(--color-navy)]">
                       {specialty}
@@ -476,10 +468,10 @@ export default function HomePageContent() {
           <div className="container-shell">
             <div className="max-w-3xl rounded-[2rem] border border-white/10 bg-white/5 p-8 shadow-[var(--shadow-soft)] backdrop-blur sm:p-10">
               <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                What process is costing your team time every week?
+                What Is Costing Your Team Hours Every Week?
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-200">
-                Tell us where your operation is getting stuck. We will help you determine whether custom software, ERP improvements, or automation can solve it.
+                Tell us where your process is getting stuck. We will help determine whether custom software, automation, integration, or improvements to your existing systems can solve it.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
@@ -492,7 +484,7 @@ export default function HomePageContent() {
                   href="/portfolio"
                   className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]"
                 >
-                  See Our Work
+                  View Our Work
                 </Link>
               </div>
             </div>

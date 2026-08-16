@@ -1,15 +1,8 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
-  const [year, setYear] = useState("");
-
-  useEffect(() => {
-    setYear(new Date().getFullYear());
-  }, []);
+  const year = 2026;
 
   return (
     <footer className="border-t border-[var(--color-border)] bg-[var(--color-navy)] py-16 text-white">
@@ -22,12 +15,12 @@ export default function Footer() {
                 SCHLA<span className="text-[var(--color-teal)]">TECH</span>
               </span>
               <span className="mt-1 text-[11px] uppercase tracking-[0.24em] text-slate-300">
-                Manufacturing software
+                Custom software
               </span>
             </div>
           </Link>
           <p className="mt-6 max-w-md text-base leading-7 text-slate-300">
-            We help manufacturers eliminate manual work through custom software, ERP expertise, and intelligent automation.
+            Custom software, automation, integrations, and ERP solutions built around the way your business works.
           </p>
           <p className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-gold)]">
             Insight. Action. Growth.
@@ -35,24 +28,22 @@ export default function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-300">Navigate</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-300">Solutions</h2>
           <ul className="mt-5 space-y-3 text-base text-slate-200">
-            <li><Link href="/" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Home</Link></li>
-            <li><Link href="/#services" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Solutions</Link></li>
-            <li><Link href="/portfolio" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Case Studies</Link></li>
-            <li><Link href="/about" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">About</Link></li>
-            <li><Link href="/#contact" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Contact</Link></li>
-            <li><Link href="/acumatica-development" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Acumatica Development</Link></li>
+            <li><Link href="/#services" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Custom Software</Link></li>
+            <li><Link href="/#services" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Automation</Link></li>
+            <li><Link href="/#services" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">ERP and Integrations</Link></li>
+            <li><Link href="/#services" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Reporting and Analytics</Link></li>
           </ul>
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-300">Contact</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-300">Company</h2>
           <ul className="mt-5 space-y-3 text-base text-slate-200">
-            <li>Holmesville, Ohio</li>
-            <li><a href="mailto:matt@schlatech.com" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">matt@schlatech.com</a></li>
-            <li><a href="tel:+13307631399" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">(330) 763-1399</a></li>
-            <li><a href="https://instagram.com/schlatech" target="_blank" rel="noreferrer" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Instagram</a></li>
+            <li><Link href="/about" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">About</Link></li>
+            <li><Link href="/portfolio" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Case Studies</Link></li>
+            <li><Link href="/#contact" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Contact</Link></li>
+            <li><Link href="/acumatica-development" className="transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]">Acumatica Development</Link></li>
           </ul>
         </div>
       </div>

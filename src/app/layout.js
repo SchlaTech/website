@@ -17,18 +17,18 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL("https://schlatech.com"),
   title: {
-    default: "SchlaTech | Manufacturing Software, ERP Solutions and Automation",
+    default: "SchlaTech | Custom Software, Automation, and ERP Solutions",
     template: "%s | SchlaTech",
   },
   description:
-    "SchlaTech helps manufacturers eliminate manual work through custom software, Acumatica and Global Shop ERP solutions, automation, reporting, and system integrations.",
+    "SchlaTech builds custom software, automation, integrations, and business systems that solve real operational problems, with deep experience in manufacturing and ERP.",
   alternates: {
     canonical: "https://schlatech.com",
   },
   openGraph: {
-    title: "SchlaTech | Manufacturing Software, ERP Solutions and Automation",
+    title: "SchlaTech | Custom Software, Automation, and ERP Solutions",
     description:
-      "SchlaTech helps manufacturers eliminate manual work through custom software, Acumatica and Global Shop ERP solutions, automation, reporting, and system integrations.",
+      "SchlaTech builds custom software, automation, integrations, and business systems that solve real operational problems, with deep experience in manufacturing and ERP.",
     url: "https://schlatech.com",
     siteName: "SchlaTech",
     type: "website",
@@ -36,9 +36,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SchlaTech | Manufacturing Software, ERP Solutions and Automation",
+    title: "SchlaTech | Custom Software, Automation, and ERP Solutions",
     description:
-      "SchlaTech helps manufacturers eliminate manual work through custom software, Acumatica and Global Shop ERP solutions, automation, reporting, and system integrations.",
+      "SchlaTech builds custom software, automation, integrations, and business systems that solve real operational problems, with deep experience in manufacturing and ERP.",
     images: ["/images/icon.png"],
   },
   robots: {

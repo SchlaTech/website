@@ -7,11 +7,16 @@ import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
 
 const solutionsLinks = [
-  { href: "/acumatica-development", label: "Acumatica Development" },
-  { href: "/#services", label: "Manufacturing Automation" },
   { href: "/#services", label: "Custom Software" },
+  { href: "/#services", label: "Business Automation" },
+  { href: "/#services", label: "ERP and Integrations" },
   { href: "/#services", label: "Reporting and Analytics" },
-  { href: "/#services", label: "Global Shop ERP" },
+  { href: "/acumatica-development", label: "Acumatica Development" },
+];
+
+const industriesLinks = [
+  { href: "/#manufacturing", label: "Manufacturing" },
+  { href: "/#services", label: "Other Industries" },
 ];
 
 export default function Header({
@@ -30,8 +35,11 @@ export default function Header({
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
   const [isMobileSolutionsOpen, setIsMobileSolutionsOpen] = useState(false);
-  const dropdownRef = useRef(null);
+  const [isMobileIndustriesOpen, setIsMobileIndustriesOpen] = useState(false);
+  const solutionsDropdownRef = useRef(null);
+  const industriesDropdownRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,16 +53,21 @@ export default function Header({
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (solutionsDropdownRef.current && !solutionsDropdownRef.current.contains(event.target)) {
         setIsSolutionsOpen(false);
+      }
+      if (industriesDropdownRef.current && !industriesDropdownRef.current.contains(event.target)) {
+        setIsIndustriesOpen(false);
       }
     };
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         setIsSolutionsOpen(false);
+        setIsIndustriesOpen(false);
         setIsOpen(false);
         setIsMobileSolutionsOpen(false);
+        setIsMobileIndustriesOpen(false);
       }
     };
 
@@ -77,6 +90,9 @@ export default function Header({
     if (href === "/#contact") {
       return pathname === "/";
     }
+    if (href === "/#manufacturing") {
+      return pathname === "/";
+    }
     if (href === "/portfolio") {
       return pathname === "/portfolio";
     }
@@ -85,6 +101,19 @@ export default function Header({
 
   const handleMobileSolutionToggle = () => {
     setIsMobileSolutionsOpen((value) => !value);
+    setIsMobileIndustriesOpen(false);
+  };
+
+  const handleMobileIndustryToggle = () => {
+    setIsMobileIndustriesOpen((value) => !value);
+    setIsMobileSolutionsOpen(false);
+  };
+
+  const handleToggleKeyDown = (event, toggleFn) => {
+    if (event.key === "Enter" || event.key === " " || event.key === "Spacebar") {
+      event.preventDefault();
+      toggleFn();
+    }
   };
 
   return (
@@ -104,7 +133,7 @@ export default function Header({
                 SCHLA<span className="text-[var(--color-teal)]">TECH</span>
               </span>
               <span className="mt-1 text-[11px] uppercase tracking-[0.24em] text-[color:var(--color-muted)]">
-                Manufacturing software
+                Custom software
               </span>
             </div>
           </Link>
@@ -116,7 +145,7 @@ export default function Header({
               </Link>
 
               <div
-                ref={dropdownRef}
+                ref={solutionsDropdownRef}
                 className="relative"
                 onBlur={(event) => {
                   if (!event.currentTarget.contains(event.relatedTarget)) {
@@ -130,6 +159,7 @@ export default function Header({
                   aria-expanded={isSolutionsOpen}
                   aria-haspopup="true"
                   onClick={() => setIsSolutionsOpen((value) => !value)}
+                  onKeyDown={(event) => handleToggleKeyDown(event, () => setIsSolutionsOpen((value) => !value))}
                   onFocus={() => setIsSolutionsOpen(true)}
                   onMouseEnter={() => setIsSolutionsOpen(true)}
                 >
@@ -160,6 +190,52 @@ export default function Header({
                 ) : null}
               </div>
 
+              <div
+                ref={industriesDropdownRef}
+                className="relative"
+                onBlur={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget)) {
+                    setIsIndustriesOpen(false);
+                  }
+                }}
+              >
+                <button
+                  type="button"
+                  className={`inline-flex items-center gap-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 ${isIndustriesOpen ? "text-[var(--color-teal)]" : "text-[var(--color-navy)] hover:text-[var(--color-teal)]"}`}
+                  aria-expanded={isIndustriesOpen}
+                  aria-haspopup="true"
+                  onClick={() => setIsIndustriesOpen((value) => !value)}
+                  onKeyDown={(event) => handleToggleKeyDown(event, () => setIsIndustriesOpen((value) => !value))}
+                  onFocus={() => setIsIndustriesOpen(true)}
+                  onMouseEnter={() => setIsIndustriesOpen(true)}
+                >
+                  Industries
+                  <ChevronDown size={16} className={`transition ${isIndustriesOpen ? "rotate-180" : "rotate-0"}`} />
+                </button>
+
+                {isIndustriesOpen ? (
+                  <div
+                    className="absolute left-0 top-full mt-3 w-52 rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-white p-3 shadow-[var(--shadow-hover)]"
+                    onMouseEnter={() => setIsIndustriesOpen(true)}
+                    onMouseLeave={() => setIsIndustriesOpen(false)}
+                  >
+                    <ul className="space-y-1">
+                      {industriesLinks.map((link) => (
+                        <li key={link.label}>
+                          <Link
+                            href={link.href}
+                            className="block rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-navy)] transition hover:bg-[color:var(--color-surface)] hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
+                            onClick={() => setIsIndustriesOpen(false)}
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+              </div>
+
               <Link href="/portfolio" className={`text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 ${isActiveLink("/portfolio") ? "text-[var(--color-teal)]" : "text-[var(--color-navy)] hover:text-[var(--color-teal)]"}`}>
                 Case Studies
               </Link>
@@ -179,6 +255,7 @@ export default function Header({
               aria-label="Toggle navigation"
               aria-expanded={isOpen}
               onClick={() => setIsOpen((value) => !value)}
+              onKeyDown={(event) => handleToggleKeyDown(event, () => setIsOpen((value) => !value))}
             >
               {isOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -197,6 +274,7 @@ export default function Header({
                   className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-base font-medium text-[var(--color-navy)] transition hover:bg-[color:var(--color-surface)] hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
                   aria-expanded={isMobileSolutionsOpen}
                   onClick={handleMobileSolutionToggle}
+                  onKeyDown={(event) => handleToggleKeyDown(event, handleMobileSolutionToggle)}
                 >
                   Solutions
                   <ChevronDown size={16} className={`transition ${isMobileSolutionsOpen ? "rotate-180" : "rotate-0"}`} />
@@ -210,6 +288,35 @@ export default function Header({
                         onClick={() => {
                           setIsOpen(false);
                           setIsMobileSolutionsOpen(false);
+                        }}
+                        className="block rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-navy)] transition hover:bg-white hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+              <div>
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-base font-medium text-[var(--color-navy)] transition hover:bg-[color:var(--color-surface)] hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
+                  aria-expanded={isMobileIndustriesOpen}
+                  onClick={handleMobileIndustryToggle}
+                  onKeyDown={(event) => handleToggleKeyDown(event, handleMobileIndustryToggle)}
+                >
+                  Industries
+                  <ChevronDown size={16} className={`transition ${isMobileIndustriesOpen ? "rotate-180" : "rotate-0"}`} />
+                </button>
+                {isMobileIndustriesOpen ? (
+                  <div className="mt-2 space-y-1 rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[color:var(--color-surface)] p-2">
+                    {industriesLinks.map((link) => (
+                      <Link
+                        key={link.label}
+                        href={link.href}
+                        onClick={() => {
+                          setIsOpen(false);
+                          setIsMobileIndustriesOpen(false);
                         }}
                         className="block rounded-lg px-3 py-2 text-sm font-medium text-[var(--color-navy)] transition hover:bg-white hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
                       >
