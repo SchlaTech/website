@@ -1,7 +1,19 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx next *)"
+      "Bash(npx next *)",
+      "Bash(python3 -c ' *)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:4173/ --max-time 10)",
+      "Bash(tail -40 /tmp/nextdev.log; echo \"---procs---\"; ps aux | grep -i next | grep -v grep)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/ --max-time 10)",
+      "Bash(chromium-cli --session schlatech-header)",
+      "Bash(node -e \"require.resolve\\('playwright'\\)\")",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(rm -f _screenshot_header.js test-results/header-badge.png test-results/header-full-page.png)",
+      "Bash(netstat -ano)",
+      "Bash(node _screenshot_logo.js)"
     ]
   }
 }

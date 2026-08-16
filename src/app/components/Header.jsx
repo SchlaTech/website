@@ -128,7 +128,7 @@ export default function Header({
       >
         <div className="container-shell flex h-20 items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2">
-            <Image src="/images/logo.png" alt="SchlaTech logo" width={40} height={40} className="h-10 w-10" />
+            <Image src="/images/altLogo.png" alt="SchlaTech logo" width={40} height={40} className="h-10 w-10" />
             <div className="flex flex-col leading-none">
               <span className="text-lg font-semibold tracking-[0.24em] text-[var(--color-navy)]">
                 SCHLA<span className="text-[var(--color-teal)]">TECH</span>
