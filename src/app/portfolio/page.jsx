@@ -88,6 +88,30 @@ const caseStudies = [
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
 
+export const metadata = {
+  title: "Case Studies | SchlaTech",
+  description:
+    "See examples of SchlaTech's custom software, ERP, automation, and workflow projects for manufacturing and operations teams.",
+  alternates: {
+    canonical: "https://schlatech.com/portfolio",
+  },
+  openGraph: {
+    title: "Case Studies | SchlaTech",
+    description:
+      "See examples of SchlaTech's custom software, ERP, automation, and workflow projects for manufacturing and operations teams.",
+    url: "https://schlatech.com/portfolio",
+    type: "website",
+    images: [{ url: "/images/icon.png", width: 1200, height: 630, alt: "SchlaTech logo" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Case Studies | SchlaTech",
+    description:
+      "See examples of SchlaTech's custom software, ERP, automation, and workflow projects for manufacturing and operations teams.",
+    images: ["/images/icon.png"],
+  },
+};
+
 export default function PortfolioPage() {
   return (
     <>
@@ -98,7 +122,32 @@ export default function PortfolioPage() {
       <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0097B2]">Featured case studies</p>
-          <h2 className="mt-3 text-3xl font-semibold text-slate-900">Success stories built for manufacturers</h2>
+          <h2 className="mt-3 text-3xl font-semibold text-slate-900">Success stories built for manufacturers and operations teams</h2>
+        </div>
+
+        <div className="mb-12 grid gap-5 md:grid-cols-3">
+          <div className="rounded-[1.6rem] border border-slate-200 bg-slate-50 p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0097B2]">Custom software</p>
+            <h3 className="mt-3 text-xl font-semibold text-slate-900">Built around the workflow</h3>
+            <p className="mt-3 text-base leading-7 text-slate-700">Web, desktop, and mobile tools designed around how your business actually operates.</p>
+          </div>
+          <div className="rounded-[1.6rem] border border-slate-200 bg-slate-50 p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0097B2]">ERP + integrations</p>
+            <h3 className="mt-3 text-xl font-semibold text-slate-900">Connected systems</h3>
+            <p className="mt-3 text-base leading-7 text-slate-700">Acumatica work, data synchronization, API integrations, and operational process automation.</p>
+          </div>
+          <div className="rounded-[1.6rem] border border-slate-200 bg-slate-50 p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0097B2]">Business impact</p>
+            <h3 className="mt-3 text-xl font-semibold text-slate-900">Fewer manual steps</h3>
+            <p className="mt-3 text-base leading-7 text-slate-700">Workflows that reduce rework, improve visibility, and give staff time back to higher-value work.</p>
+          </div>
+        </div>
+
+        <div className="mb-12 rounded-[2rem] border border-slate-200 bg-slate-50 p-6 sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0097B2]">What this work looks like</p>
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-700">
+            Whether the challenge is scheduling, inventory, authentication, reporting, automation, or a disconnected workflow, the goal is the same: make the work easier to run, easier to trust, and easier to scale.
+          </p>
         </div>
 
         <div className="space-y-8">

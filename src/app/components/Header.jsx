@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { event as gtagEvent } from "../../lib/gtag";
 
 const solutionsLinks = [
   { href: "/#services", label: "Custom Software" },
@@ -236,16 +237,32 @@ export default function Header({
                 ) : null}
               </div>
 
-              <Link href="/portfolio" className={`text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 ${isActiveLink("/portfolio") ? "text-[var(--color-teal)]" : "text-[var(--color-navy)] hover:text-[var(--color-teal)]"}`}>
+              <Link
+                href="/portfolio"
+                onClick={() => gtagEvent({ action: "click_case_studies", category: "navigation", label: "Case Studies" })}
+                className={`text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 ${isActiveLink("/portfolio") ? "text-[var(--color-teal)]" : "text-[var(--color-navy)] hover:text-[var(--color-teal)]"}`}
+              >
                 Case Studies
               </Link>
-              <Link href="/about" className={`text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 ${isActiveLink("/about") ? "text-[var(--color-teal)]" : "text-[var(--color-navy)] hover:text-[var(--color-teal)]"}`}>
+              <Link
+                href="/about"
+                onClick={() => gtagEvent({ action: "click_about", category: "navigation", label: "About" })}
+                className={`text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 ${isActiveLink("/about") ? "text-[var(--color-teal)]" : "text-[var(--color-navy)] hover:text-[var(--color-teal)]"}`}
+              >
                 About
               </Link>
-              <Link href="/#contact" className={`text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 ${isActiveLink("/#contact") ? "text-[var(--color-teal)]" : "text-[var(--color-navy)] hover:text-[var(--color-teal)]"}`}>
+              <Link
+                href="/#contact"
+                onClick={() => gtagEvent({ action: "click_contact", category: "navigation", label: "Contact link" })}
+                className={`text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2 ${isActiveLink("/#contact") ? "text-[var(--color-teal)]" : "text-[var(--color-navy)] hover:text-[var(--color-teal)]"}`}
+              >
                 Contact
               </Link>
-              <Link href={ctaHref} className="inline-flex items-center rounded-full bg-[var(--color-teal)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[color:var(--color-teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2">
+              <Link
+                href={ctaHref}
+                onClick={() => gtagEvent({ action: "click_cta", category: "navigation", label: ctaText })}
+                className="inline-flex items-center rounded-full bg-[var(--color-teal)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[color:var(--color-teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
+              >
                 {ctaText}
               </Link>
             </div>
@@ -326,16 +343,44 @@ export default function Header({
                   </div>
                 ) : null}
               </div>
-              <Link href="/portfolio" onClick={() => setIsOpen(false)} className="rounded-lg px-3 py-2 text-base font-medium text-[var(--color-navy)] transition hover:bg-[color:var(--color-surface)] hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2">
+              <Link
+                href="/portfolio"
+                onClick={() => {
+                  setIsOpen(false);
+                  gtagEvent({ action: "click_case_studies", category: "navigation", label: "Case Studies" });
+                }}
+                className="rounded-lg px-3 py-2 text-base font-medium text-[var(--color-navy)] transition hover:bg-[color:var(--color-surface)] hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
+              >
                 Case Studies
               </Link>
-              <Link href="/about" onClick={() => setIsOpen(false)} className="rounded-lg px-3 py-2 text-base font-medium text-[var(--color-navy)] transition hover:bg-[color:var(--color-surface)] hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2">
+              <Link
+                href="/about"
+                onClick={() => {
+                  setIsOpen(false);
+                  gtagEvent({ action: "click_about", category: "navigation", label: "About" });
+                }}
+                className="rounded-lg px-3 py-2 text-base font-medium text-[var(--color-navy)] transition hover:bg-[color:var(--color-surface)] hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
+              >
                 About
               </Link>
-              <Link href="/#contact" onClick={() => setIsOpen(false)} className="rounded-lg px-3 py-2 text-base font-medium text-[var(--color-navy)] transition hover:bg-[color:var(--color-surface)] hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2">
+              <Link
+                href="/#contact"
+                onClick={() => {
+                  setIsOpen(false);
+                  gtagEvent({ action: "click_contact", category: "navigation", label: "Contact link" });
+                }}
+                className="rounded-lg px-3 py-2 text-base font-medium text-[var(--color-navy)] transition hover:bg-[color:var(--color-surface)] hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
+              >
                 Contact
               </Link>
-              <Link href={ctaHref} onClick={() => setIsOpen(false)} className="mt-2 inline-flex items-center justify-center rounded-full bg-[var(--color-teal)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[color:var(--color-teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2">
+              <Link
+                href={ctaHref}
+                onClick={() => {
+                  setIsOpen(false);
+                  gtagEvent({ action: "click_cta", category: "navigation", label: ctaText });
+                }}
+                className="mt-2 inline-flex items-center justify-center rounded-full bg-[var(--color-teal)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[color:var(--color-teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
+              >
                 {ctaText}
               </Link>
             </div>
@@ -372,6 +417,7 @@ export default function Header({
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href={ctaHref}
+                    onClick={() => gtagEvent({ action: "click_cta", category: "hero", label: ctaText })}
                     className="inline-flex items-center justify-center rounded-full bg-[var(--color-teal)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[color:var(--color-teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]"
                   >
                     {ctaText}
@@ -379,6 +425,7 @@ export default function Header({
                   {secondaryCtaHref ? (
                     <Link
                       href={secondaryCtaHref}
+                      onClick={() => gtagEvent({ action: "click_secondary_cta", category: "hero", label: secondaryCtaText })}
                       className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]"
                     >
                       {secondaryCtaText}

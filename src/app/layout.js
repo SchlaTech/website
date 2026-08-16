@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
@@ -21,14 +22,14 @@ export const metadata = {
     template: "%s | SchlaTech",
   },
   description:
-    "SchlaTech builds custom software, automation, integrations, and business systems that solve real operational problems, with deep experience in manufacturing and ERP.",
+    "SchlaTech builds custom software, automation, integrations, and ERP solutions for businesses that need technology built around real workflows. We work across operations, manufacturing, and process improvement.",
   alternates: {
     canonical: "https://schlatech.com",
   },
   openGraph: {
     title: "SchlaTech | Custom Software, Automation, and ERP Solutions",
     description:
-      "SchlaTech builds custom software, automation, integrations, and business systems that solve real operational problems, with deep experience in manufacturing and ERP.",
+      "SchlaTech builds custom software, automation, integrations, and ERP solutions for businesses that need technology built around real workflows. We work across operations, manufacturing, and process improvement.",
     url: "https://schlatech.com",
     siteName: "SchlaTech",
     type: "website",
@@ -38,7 +39,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "SchlaTech | Custom Software, Automation, and ERP Solutions",
     description:
-      "SchlaTech builds custom software, automation, integrations, and business systems that solve real operational problems, with deep experience in manufacturing and ERP.",
+      "SchlaTech builds custom software, automation, integrations, and ERP solutions for businesses that need technology built around real workflows. We work across operations, manufacturing, and process improvement.",
     images: ["/images/icon.png"],
   },
   robots: {
@@ -55,6 +56,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="min-h-screen bg-[var(--color-background)] text-[var(--color-foreground)] antialiased">
+        {process.env.NEXT_PUBLIC_GA_ID ? (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} strategy="afterInteractive" />
+            <Script
+              id="gtag-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`,
+              }}
+            />
+          </>
+        ) : null}
         {children}
       </body>
     </html>

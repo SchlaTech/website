@@ -4,9 +4,9 @@ import HomePageContent from "./components/home/HomePageContent";
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
 
 export const metadata = {
-  title: "SchlaTech | Custom Software, Automation, and ERP Solutions",
+  title: "Custom Software, Automation, and ERP Solutions | SchlaTech",
   description:
-    "SchlaTech builds custom software, automation, integrations, and business systems that solve real operational problems, with deep experience in manufacturing and ERP.",
+    "SchlaTech builds custom software, automation, integrations, and ERP solutions for businesses that need technology built around real workflows, operational needs, and process improvement.",
 };
 
 export default function Home() {

@@ -2,7 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { event as gtagEvent } from "../../../lib/gtag";
+import { assignVariant } from "../../../lib/ab";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   BarChart3,
@@ -88,6 +91,55 @@ const solutions = [
   },
 ];
 
+const workflowSteps = [
+  {
+    title: "Diagnose the bottleneck",
+    description: "We map the process, the pain points, and the business constraints before choosing a solution.",
+  },
+  {
+    title: "Design the right fit",
+    description: "We align the technology, workflows, and integrations to the way your team actually works.",
+  },
+  {
+    title: "Build and refine",
+    description: "We implement in practical stages, validate with your team, and make improvements before rollout.",
+  },
+];
+
+const commonProjectTypes = [
+  {
+    title: "Manufacturing operations",
+    description: "Scheduling, shop-floor visibility, inventory workflows, reporting, and ERP-connected automation.",
+  },
+  {
+    title: "ERP and data connections",
+    description: "Integrations between Acumatica, internal tools, external systems, and the data needed to run the business.",
+  },
+  {
+    title: "Internal tools and modernization",
+    description: "Desktop, web, and mobile applications that replace spreadsheets, manual processes, and outdated systems.",
+  },
+];
+
+const faqItems = [
+  {
+    question: "How do you know what the right solution is?",
+    answer: "We start by understanding the process, the bottleneck, and the business outcome before choosing technology or scope.",
+  },
+  {
+    question: "Do you work outside manufacturing?",
+    answer: "Yes. The same process-first approach applies to other industries and business workflows, especially when software needs to support operations.",
+  },
+  {
+    question: "Can you work with existing ERP and systems?",
+    answer: "Yes. We frequently connect existing ERP platforms, APIs, databases, and operational tools without forcing a full rip-and-replace.",
+  },
+  {
+    question: "What does a project usually look like?",
+    answer: "Most projects begin with discovery and scope definition, then move into design, implementation, and validation with clear business feedback throughout.",
+  },
+];
+
 const reasons = [
   {
     title: "Built Around Your Workflow",
@@ -140,6 +192,25 @@ const caseStudies = [
 ];
 
 export default function HomePageContent() {
+  const [ctaVariant, setCtaVariant] = useState(false);
+
+  useEffect(() => {
+    try {
+      const variant = assignVariant();
+      const isAlt = variant === "alt";
+      // Cookie/URL-based assignment can only be read client-side, so this must
+      // run post-mount rather than as a lazy useState initializer (that would
+      // desync from the server-rendered markup and cause a hydration mismatch).
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setCtaVariant(isAlt);
+      // Report assignment/view to analytics if available
+      gtagEvent({ action: "ab_assign", category: "experiment", label: variant });
+      gtagEvent({ action: "ab_view", category: "experiment", label: variant });
+    } catch (e) {
+      /* noop */
+    }
+  }, []);
+
   return (
     <>
       <Header showHero={false} />
@@ -176,12 +247,15 @@ export default function HomePageContent() {
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="#contact"
+                  aria-label={ctaVariant ? "Get a free project estimate" : "Schedule a 15-minute discovery call"}
+                  onClick={() => gtagEvent({ action: "click_cta", category: "hero", label: ctaVariant ? "free_estimate" : "discovery_call" })}
                   className="inline-flex items-center justify-center rounded-full bg-[var(--color-teal)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[color:var(--color-teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]"
                 >
-                  Discuss Your Project
+                  {ctaVariant ? "Get a free project estimate" : "Schedule a 15-minute discovery call"}
                 </Link>
                 <Link
                   href="/portfolio"
+                  onClick={() => gtagEvent({ action: "click_view_work", category: "hero", label: "View Our Work" })}
                   className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--color-navy)]"
                 >
                   View Our Work
@@ -248,6 +322,44 @@ export default function HomePageContent() {
                   </div>
                 </motion.article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-20 sm:py-24">
+          <div className="container-shell">
+            <div className="rounded-[2rem] border border-[var(--color-border)] bg-[color:var(--color-surface)] p-8 shadow-[var(--shadow-soft)] lg:p-10">
+              <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+                <SectionHeading
+                  eyebrow="How we help"
+                  title="A practical path from process problem to working solution"
+                  description="We don't start with a technology stack first. We start with the workflow, the bottleneck, and the business outcome you are trying to improve."
+                  align="left"
+                />
+                <Link
+                  href="#contact"
+                  aria-label={ctaVariant ? "Get a free estimate" : "Schedule a discovery call"}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--color-teal)] transition hover:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
+                >
+                  {ctaVariant ? "Get a free estimate" : "Schedule a discovery call"}
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+
+              <div className="mt-10 grid gap-6 md:grid-cols-3">
+                {workflowSteps.map((step, index) => (
+                  <article
+                    key={step.title}
+                    className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-white p-6 shadow-[var(--shadow-soft)]"
+                  >
+                    <div className="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-teal)]/10 text-sm font-semibold text-[var(--color-teal)]">
+                      0{index + 1}
+                    </div>
+                    <h3 className="text-xl font-semibold text-[var(--color-navy)]">{step.title}</h3>
+                    <p className="mt-3 text-base leading-7 text-[color:var(--color-muted)]">{step.description}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -395,6 +507,43 @@ export default function HomePageContent() {
 
         <section className="bg-[color:var(--color-surface)] py-20 sm:py-24">
           <div className="container-shell">
+            <div className="rounded-[2rem] border border-[var(--color-border)] bg-white p-8 shadow-[var(--shadow-soft)] lg:p-10">
+              <SectionHeading
+                eyebrow="Typical project types"
+                title="The kinds of problems we solve most often"
+                description="The work usually falls into a few repeatable categories: workflow automation, ERP and data integration, and custom tools that make operations easier to run."
+                align="left"
+              />
+
+              <div className="mt-8 grid gap-6 md:grid-cols-3">
+                {commonProjectTypes.map((item) => (
+                  <article key={item.title} className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[color:var(--color-surface)] p-6">
+                    <h3 className="text-xl font-semibold text-[var(--color-navy)]">{item.title}</h3>
+                    <p className="mt-3 text-base leading-7 text-[color:var(--color-muted)]">{item.description}</p>
+                  </article>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="#contact"
+                  className="inline-flex items-center justify-center rounded-full bg-[var(--color-teal)] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[color:var(--color-teal-dark)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
+                >
+                  Talk through your project
+                </Link>
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center justify-center rounded-full border border-[var(--color-border)] bg-white px-6 py-3 text-sm font-semibold text-[var(--color-navy)] transition hover:border-[var(--color-teal)] hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2"
+                >
+                  See our work
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-[color:var(--color-surface)] py-20 sm:py-24">
+          <div className="container-shell">
             <SectionHeading
               eyebrow="Why Businesses Work With SchlaTech"
               title="A practical partner for custom software and operational improvement"
@@ -405,6 +554,24 @@ export default function HomePageContent() {
                 <article key={reason.title} className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-white p-7 shadow-[var(--shadow-soft)]">
                   <h3 className="text-lg font-semibold text-[var(--color-navy)]">{reason.title}</h3>
                   <p className="mt-3 text-base leading-7 text-[color:var(--color-muted)]">{reason.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-20 sm:py-24">
+          <div className="container-shell">
+            <SectionHeading
+              eyebrow="FAQs"
+              title="Common questions before a project begins"
+              description="These are the conversations that usually happen before the first line of code gets written."
+            />
+            <div className="mt-10 grid gap-6 lg:grid-cols-2">
+              {faqItems.map((item) => (
+                <article key={item.question} className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-[color:var(--color-surface)] p-6">
+                  <h3 className="text-lg font-semibold text-[var(--color-navy)]">{item.question}</h3>
+                  <p className="mt-3 text-base leading-7 text-[color:var(--color-muted)]">{item.answer}</p>
                 </article>
               ))}
             </div>
@@ -505,6 +672,9 @@ export default function HomePageContent() {
                 <p className="mt-5 text-lg leading-8 text-[color:var(--color-muted)]">
                   Share the process, system, or problem you want to improve. We will help you evaluate practical options and outline the best path forward.
                 </p>
+                  <p className="mt-4 text-sm text-[color:var(--color-muted)]">
+                    Prefer a quick call? Email <a href="mailto:matt@schlatech.com" className="font-semibold text-[var(--color-navy)] hover:text-[var(--color-teal)]">matt@schlatech.com</a> or call <a href="tel:+13307631399" className="font-semibold text-[var(--color-navy)] hover:text-[var(--color-teal)]">(330) 763-1399</a> to schedule a 15-minute discovery call.
+                  </p>
                 <div className="mt-8 space-y-3 text-sm text-[color:var(--color-muted)]">
                   <p>Holmesville, Ohio</p>
                   <a href="mailto:matt@schlatech.com" className="block font-semibold text-[var(--color-navy)] transition hover:text-[var(--color-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-teal)] focus-visible:ring-offset-2">

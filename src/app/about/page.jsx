@@ -8,6 +8,30 @@ import Footer from "../components/Footer";
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
 
+export const metadata = {
+  title: "About SchlaTech | Custom Software and ERP Partner",
+  description:
+    "Learn how SchlaTech helps businesses with custom software, ERP integrations, business automation, and process improvement built around real workflows.",
+  alternates: {
+    canonical: "https://schlatech.com/about",
+  },
+  openGraph: {
+    title: "About SchlaTech | Custom Software and ERP Partner",
+    description:
+      "Learn how SchlaTech helps businesses with custom software, ERP integrations, business automation, and process improvement built around real workflows.",
+    url: "https://schlatech.com/about",
+    type: "website",
+    images: [{ url: "/images/icon.png", width: 1200, height: 630, alt: "SchlaTech logo" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About SchlaTech | Custom Software and ERP Partner",
+    description:
+      "Learn how SchlaTech helps businesses with custom software, ERP integrations, business automation, and process improvement built around real workflows.",
+    images: ["/images/icon.png"],
+  },
+};
+
 export default function AboutPage() {
   return (
     <>
