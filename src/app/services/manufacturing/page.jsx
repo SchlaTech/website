@@ -38,11 +38,11 @@ export default function ManufacturingPage() {
         />
 
         <section className="mt-8 grid gap-8 md:grid-cols-2">
-          <article className="rounded-xl border bg-white p-6">
+          <article className="rounded-xl border border-[var(--color-border)] bg-white p-6">
             <h3 className="mb-2 text-lg font-semibold">Shop-floor workflows</h3>
             <p className="text-[color:var(--color-muted)]">Mobile data capture, QR/Barcode scanning, and synchronized updates to your ERP.</p>
           </article>
-          <article className="rounded-xl border bg-white p-6">
+          <article className="rounded-xl border border-[var(--color-border)] bg-white p-6">
             <h3 className="mb-2 text-lg font-semibold">Production scheduling</h3>
             <p className="text-[color:var(--color-muted)]">Scheduling, dispatch, and capacity planning tools that integrate with manufacturing data.</p>
           </article>

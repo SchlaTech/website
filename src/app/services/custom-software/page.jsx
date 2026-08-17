@@ -36,11 +36,11 @@ export default function CustomSoftwarePage() {
         />
 
         <section className="mt-8 grid gap-8 md:grid-cols-2">
-          <article className="rounded-xl border bg-white p-6">
+          <article className="rounded-xl border border-[var(--color-border)] bg-white p-6">
             <h3 className="mb-2 text-lg font-semibold">Internal tools</h3>
             <p className="text-[color:var(--color-muted)]">Replace fragile spreadsheets and manual processes with reliable internal tools.</p>
           </article>
-          <article className="rounded-xl border bg-white p-6">
+          <article className="rounded-xl border border-[var(--color-border)] bg-white p-6">
             <h3 className="mb-2 text-lg font-semibold">Customer-facing apps</h3>
             <p className="text-[color:var(--color-muted)]">Web and mobile experiences that serve customers or partners with secure, maintainable interfaces.</p>
           </article>

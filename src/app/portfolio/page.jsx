@@ -121,31 +121,31 @@ export default function PortfolioPage() {
       />
       <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-10 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0097B2]">Featured case studies</p>
-          <h2 className="mt-3 text-3xl font-semibold text-slate-900">Success stories built for manufacturers and operations teams</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-teal)]">Featured case studies</p>
+          <h2 className="mt-3 text-3xl font-semibold text-[var(--color-navy)]">Success stories built for manufacturers and operations teams</h2>
         </div>
 
         <div className="mb-12 grid gap-5 md:grid-cols-3">
-          <div className="rounded-[1.6rem] border border-slate-200 bg-slate-50 p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0097B2]">Custom software</p>
-            <h3 className="mt-3 text-xl font-semibold text-slate-900">Built around the workflow</h3>
-            <p className="mt-3 text-base leading-7 text-slate-700">Web, desktop, and mobile tools designed around how your business actually operates.</p>
+          <div className="rounded-[1.6rem] border border-[var(--color-border)] bg-[color:var(--color-surface)] p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">Custom software</p>
+            <h3 className="mt-3 text-xl font-semibold text-[var(--color-navy)]">Built around the workflow</h3>
+            <p className="mt-3 text-base leading-7 text-[color:var(--color-muted)]">Web, desktop, and mobile tools designed around how your business actually operates.</p>
           </div>
-          <div className="rounded-[1.6rem] border border-slate-200 bg-slate-50 p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0097B2]">ERP + integrations</p>
-            <h3 className="mt-3 text-xl font-semibold text-slate-900">Connected systems</h3>
-            <p className="mt-3 text-base leading-7 text-slate-700">Acumatica work, data synchronization, API integrations, and operational process automation.</p>
+          <div className="rounded-[1.6rem] border border-[var(--color-border)] bg-[color:var(--color-surface)] p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">ERP + integrations</p>
+            <h3 className="mt-3 text-xl font-semibold text-[var(--color-navy)]">Connected systems</h3>
+            <p className="mt-3 text-base leading-7 text-[color:var(--color-muted)]">Acumatica work, data synchronization, API integrations, and operational process automation.</p>
           </div>
-          <div className="rounded-[1.6rem] border border-slate-200 bg-slate-50 p-6">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0097B2]">Business impact</p>
-            <h3 className="mt-3 text-xl font-semibold text-slate-900">Fewer manual steps</h3>
-            <p className="mt-3 text-base leading-7 text-slate-700">Workflows that reduce rework, improve visibility, and give staff time back to higher-value work.</p>
+          <div className="rounded-[1.6rem] border border-[var(--color-border)] bg-[color:var(--color-surface)] p-6">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">Business impact</p>
+            <h3 className="mt-3 text-xl font-semibold text-[var(--color-navy)]">Fewer manual steps</h3>
+            <p className="mt-3 text-base leading-7 text-[color:var(--color-muted)]">Workflows that reduce rework, improve visibility, and give staff time back to higher-value work.</p>
           </div>
         </div>
 
-        <div className="mb-12 rounded-[2rem] border border-slate-200 bg-slate-50 p-6 sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#0097B2]">What this work looks like</p>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-700">
+        <div className="mb-12 rounded-[2rem] border border-[var(--color-border)] bg-[color:var(--color-surface)] p-6 sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-teal)]">What this work looks like</p>
+          <p className="mt-4 max-w-3xl text-lg leading-8 text-[color:var(--color-muted)]">
             Whether the challenge is scheduling, inventory, authentication, reporting, automation, or a disconnected workflow, the goal is the same: make the work easier to run, easier to trust, and easier to scale.
           </p>
         </div>
@@ -154,35 +154,35 @@ export default function PortfolioPage() {
           {caseStudies.map((study) => (
             <article
               key={study.title}
-              className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_12px_30px_rgba(15,23,42,0.06)] sm:p-8"
+              className="rounded-[2rem] border border-[var(--color-border)] bg-white p-6 shadow-[var(--shadow-soft)] sm:p-8"
             >
               <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900">{study.title}</h3>
+                  <h3 className="text-2xl font-semibold text-[var(--color-navy)]">{study.title}</h3>
 
                   <div className="mt-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0097B2]">Business problem</p>
-                    <p className="mt-2 text-base leading-7 text-slate-700">{study.problem}</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">Business problem</p>
+                    <p className="mt-2 text-base leading-7 text-[color:var(--color-muted)]">{study.problem}</p>
                   </div>
 
                   <div className="mt-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0097B2]">Technical solution</p>
-                    <p className="mt-2 text-base leading-7 text-slate-700">{study.solution}</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">Technical solution</p>
+                    <p className="mt-2 text-base leading-7 text-[color:var(--color-muted)]">{study.solution}</p>
                   </div>
 
                   <div className="mt-5">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#0097B2]">Business impact</p>
-                    <p className="mt-2 text-base leading-7 text-slate-700">{study.impact}</p>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-teal)]">Business impact</p>
+                    <p className="mt-2 text-base leading-7 text-[color:var(--color-muted)]">{study.impact}</p>
                   </div>
                 </div>
 
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Technology</p>
+                <div className="rounded-2xl border border-[var(--color-border)] bg-[color:var(--color-surface)] p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--color-muted)]">Technology</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {study.technologies.map((technology) => (
                       <span
                         key={`${study.title}-${technology}`}
-                        className="rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.12em] text-slate-700"
+                        className="rounded-full border border-[var(--color-border)] bg-white px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.12em] text-[color:var(--color-muted)]"
                       >
                         {technology}
                       </span>
@@ -196,10 +196,10 @@ export default function PortfolioPage() {
 
         <div className="mt-16 text-center">
           <h3 className="text-xl font-semibold mb-2">Do you have a problem that looks like this?</h3>
-          <p className="text-gray-600 mb-4">Manufacturing, ERP, automation, and integration challenges are exactly where SchlaTech adds value.</p>
+          <p className="text-[color:var(--color-muted)] mb-4">Manufacturing, ERP, automation, and integration challenges are exactly where SchlaTech adds value.</p>
           <Link
             href="/#contact"
-            className="inline-block px-6 py-3 bg-[#0097B2] text-white font-semibold rounded-xl shadow hover:bg-[#007d99] transition"
+            className="inline-block px-6 py-3 bg-[var(--color-teal)] text-white font-semibold rounded-xl shadow hover:bg-[color:var(--color-teal-dark)] transition"
           >
             Talk to SchlaTech
           </Link>

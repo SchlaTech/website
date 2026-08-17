@@ -36,11 +36,11 @@ export default function IntegrationsPage() {
         />
 
         <section className="mt-8 grid gap-8 md:grid-cols-2">
-          <article className="rounded-xl border bg-white p-6">
+          <article className="rounded-xl border border-[var(--color-border)] bg-white p-6">
             <h3 className="mb-2 text-lg font-semibold">ERP integration</h3>
             <p className="text-[color:var(--color-muted)]">Sync data, surface KPIs, and automate workflows between the ERP and other systems.</p>
           </article>
-          <article className="rounded-xl border bg-white p-6">
+          <article className="rounded-xl border border-[var(--color-border)] bg-white p-6">
             <h3 className="mb-2 text-lg font-semibold">APIs and middleware</h3>
             <p className="text-[color:var(--color-muted)]">Design and implement APIs, queues, and middleware to manage reliable data flow and error handling.</p>
           </article>

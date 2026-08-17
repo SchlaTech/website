@@ -113,24 +113,19 @@ const reasons = [
 
 const processSteps = [
   {
-    title: "Understand the Workflow",
+    title: "Diagnose the bottleneck",
     description:
-      "Review the current process, users, systems, workarounds, and desired outcome.",
+      "We map the process, the pain points, and the business constraints before choosing a solution.",
   },
   {
-    title: "Design the Right Approach",
+    title: "Design the right fit",
     description:
-      "Determine whether the best answer is an Acumatica customization, integration, report, external application, or combination.",
+      "We align the technology, workflows, and integrations to the way your team actually works.",
   },
   {
-    title: "Build and Validate",
+    title: "Build and refine",
     description:
-      "Develop iteratively and test against real operational scenarios.",
-  },
-  {
-    title: "Deploy and Support",
-    description:
-      "Release carefully, document the solution, and support future improvements.",
+      "We implement in practical stages, validate with your team, and make improvements before rollout.",
   },
 ];
 
@@ -313,7 +308,7 @@ export default function AcumaticaDevelopmentPage() {
               eyebrow="A practical path from bottleneck to solution"
               title="How the work typically unfolds"
             />
-            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
               {processSteps.map((step, index) => (
                 <article key={step.title} className="rounded-[var(--radius-lg)] border border-[var(--color-border)] bg-white p-7 shadow-[var(--shadow-soft)]">
                   <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-teal)]">Step {index + 1}</p>
