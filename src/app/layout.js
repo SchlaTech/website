@@ -1,6 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
-import Link from "next/link";
+
+// TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
+// See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,52 +16,60 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "SchlaTech",
-  description: "Custom software for small businesses",
+  metadataBase: new URL("https://schlatech.com"),
+  title: {
+    default: "SchlaTech | Custom Software, Automation, and ERP Solutions",
+    template: "%s | SchlaTech",
+  },
+  description:
+    "SchlaTech builds custom software, automation, integrations, and ERP solutions for businesses that need technology built around real workflows. We work across operations, manufacturing, and process improvement.",
+  alternates: {
+    canonical: "https://schlatech.com",
+  },
+  openGraph: {
+    title: "SchlaTech | Custom Software, Automation, and ERP Solutions",
+    description:
+      "SchlaTech builds custom software, automation, integrations, and ERP solutions for businesses that need technology built around real workflows. We work across operations, manufacturing, and process improvement.",
+    url: "https://schlatech.com",
+    siteName: "SchlaTech",
+    type: "website",
+    images: [{ url: "/images/icon.png", width: 1200, height: 630, alt: "SchlaTech logo" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SchlaTech | Custom Software, Automation, and ERP Solutions",
+    description:
+      "SchlaTech builds custom software, automation, integrations, and ERP solutions for businesses that need technology built around real workflows. We work across operations, manufacturing, and process improvement.",
+    images: ["/images/icon.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  icons: {
+    icon: "/images/icon.png",
+    apple: "/images/icon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta
-        name="description"
-        content="Custom apps, training, and reporting for small businesses. Let SchlaTech help you modernize."
-      />
-      <meta name="robots" content="index, follow" />
-
-      {/* Open Graph */}
-      <meta
-        property="og:title"
-        content="SchlaTech – Custom Software for Small Businesses"
-      />
-      <meta
-        property="og:description"
-        content="Custom apps, training, and reporting for small businesses. Let SchlaTech help you modernize."
-      />
-      <meta
-        property="og:image"
-        content="https://schlatech.com/images/icon.png"
-      />
-      <meta property="og:url" content="https://schlatech.com" />
-      <meta property="og:type" content="website" />
-
-      {/* <!-- Twitter (some iOS apps use it too) --> */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="SchlaTech" />
-      <meta
-        name="twitter:description"
-        content="Custom software solutions for small businesses"
-      />
-      <meta
-        name="twitter:image"
-        content="https://schlatech.com/images/icon.png"
-      />
-
-      {/* <!-- Apple-specific --> */}
-      <meta name="apple-mobile-web-app-title" content="SchlaTech" />
-      <link rel="apple-touch-icon" href="/images/icon.png"></link>
-      <body className="antialiased bg-white text-gray-900">{children}</body>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="min-h-screen bg-[var(--color-background)] text-[var(--color-foreground)] antialiased">
+        {process.env.NEXT_PUBLIC_GA_ID ? (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} strategy="afterInteractive" />
+            <Script
+              id="gtag-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`,
+              }}
+            />
+          </>
+        ) : null}
+        {children}
+      </body>
     </html>
   );
 }
