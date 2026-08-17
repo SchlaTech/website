@@ -14,7 +14,9 @@
       "Bash(rm -f _screenshot_header.js test-results/header-badge.png test-results/header-full-page.png)",
       "Bash(netstat -ano)",
       "Bash(node _screenshot_logo.js)",
-      "Bash(node _screenshot_consistency.js)"
+      "Bash(node _screenshot_consistency.js)",
+      "Bash(node _screenshot_logo2.js)",
+      "Bash(node _screenshot_footer.js)"
     ]
   }
 }

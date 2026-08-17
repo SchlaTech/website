@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container-shell grid gap-10 lg:grid-cols-[1.1fr_0.8fr_0.8fr]">
         <div>
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/images/logo.png" alt="SchlaTech logo" width={40} height={40} className="h-10 w-10" />
+            <Image src="/images/altLogo2.png" alt="SchlaTech logo" width={1008} height={1304} className="h-10 w-auto" />
             <div className="flex flex-col leading-none">
               <span className="text-lg font-semibold tracking-[0.24em] text-white">
                 SCHLA<span className="text-[var(--color-teal)]">TECH</span>
