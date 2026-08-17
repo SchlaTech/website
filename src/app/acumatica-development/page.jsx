@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import SectionHeading from "../components/home/SectionHeading";
 
 // TODO: Cache Components adoption. Refactor this route so this opt-out can be removed.
 // See: https://nextjs.org/docs/app/guides/migrating-to-cache-components
@@ -185,18 +186,6 @@ export const metadata = {
     images: ["/images/icon.png"],
   },
 };
-
-function SectionHeading({ eyebrow, title, description, align = "center" }) {
-  const alignClass = align === "left" ? "items-start text-left" : "items-center text-center";
-
-  return (
-    <div className={`flex flex-col gap-3 max-w-3xl ${alignClass}`}>
-      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[var(--color-teal)]">{eyebrow}</p>
-      <h2 className="text-3xl font-semibold tracking-tight text-[var(--color-navy)] sm:text-4xl">{title}</h2>
-      {description ? <p className="text-lg leading-8 text-[color:var(--color-muted)]">{description}</p> : null}
-    </div>
-  );
-}
 
 export default function AcumaticaDevelopmentPage() {
   return (

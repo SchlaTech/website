@@ -21,10 +21,11 @@ import FeatureCard from "./FeatureCard";
 import MetricBlock from "./MetricBlock";
 
 const technologyItems = [
-  "Acumatica",
   "Global Shop ERP",
   ".NET",
   "C#",
+  "JavaScript",
+  "Next.js",
   "SQL Server",
   "Power BI",
   "REST APIs",

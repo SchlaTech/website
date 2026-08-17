@@ -4,7 +4,7 @@ export default function SectionHeading({
   description,
   align = "center",
 }) {
-  const alignClass = align === "left" ? "items-start text-left" : "items-center text-center";
+  const alignClass = align === "left" ? "items-start text-left" : "mx-auto items-center text-center";
 
   return (
     <div className={`flex flex-col gap-3 max-w-3xl ${alignClass}`}>
